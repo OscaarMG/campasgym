@@ -25,4 +25,5 @@ class Login(QMainWindow, Form):
         return self._controlador
     
     @controlador.setter
-    
+    def controlador(self, value):
+        self._controlador = value
