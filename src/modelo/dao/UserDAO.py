@@ -2,8 +2,8 @@ from src.modelo.conexion.Conexion import Conexion
 from src.modelo.vo.UserVO import UserVO
 
 class UserDAO(Conexion):
-    SQL_SELECT = 'SELECT actor_id, first_name, last_name, last_update'
-    SQL_CONSULTA = 'SELECT  1 FROM first_name WHERE nombre = ?'
+    SQL_SELECT = 'SELECT socio_id, nombre, apellidos, DNI, usuario, contrsena, email, telefono, fecha_alta'
+    SQL_CONSULTA = 'SELECT  1 FROM nombre WHERE nombre = ?'
     def consultaLogin(self, loginVO):
         cursor = self.getCursor()
         cursor.execute(self.SQL_CONSULTA, [loginVO.nombre])
@@ -20,8 +20,8 @@ class UserDAO(Conexion):
         rows = cursor.fetchall()
 
         for row in rows:
-            actor_id, first_name, last_name, last_update = row
-            usuario = UserVO(actor_id, first_name, last_name, last_update) #UserVO(row)
+            socio_id, nombre, apellidos, DNI, usuario, contrsena, email, telefono, fecha_alta = row
+            usuario = UserVO(socio_id, nombre, apellidos, DNI, usuario, contrsena, email, telefono, fecha_alta) #UserVO(row)
             usuarios.append(usuario)
 
         return usuarios
