@@ -1,5 +1,6 @@
 <RCC>
   <qresource>
+    <file>imagenes/logo.png</file>
     <file>imagenes/foto_inicial.jpg</file>
   </qresource>
   <qresource>
