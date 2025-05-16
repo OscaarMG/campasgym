@@ -6,7 +6,7 @@ class BussinessObject():
         usuarios = userdao.select()
 
         for usuario in usuarios:
-            print(usuario._actor_id)
+            print(usuario._nombre)
 
     def comprobarLogin(self, loginVO):
         user_dao = UserDAO()

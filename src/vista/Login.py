@@ -8,17 +8,15 @@ class Login(QMainWindow, Form):
     def __init__(self):
         super().__init__()
         self.setupUi(self)  # Inicializa los widgets
-
         # Conectar el botón a la función
         self.BotonAceptar.clicked.connect(self.on_button_click)
 
 
     def on_button_click(self):
         print("Botón presionado")
-        texto_area = self.UsuarioEdit.text() #Obtenet el texto del campo nombre
-        print("El texto es: ")
-        print(texto_area)
-        self._controlador.iniciarlogin(texto_area)
+        texto_usuario = self.UsuarioEdit.text() #Obtenet el texto del campo nombre
+        texto_password = self.ContrasenaEdit.text()
+        self._controlador.iniciarlogin(texto_usuario, texto_password)
 
     @property
     def controlador(self):

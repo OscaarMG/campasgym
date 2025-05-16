@@ -1,6 +1,6 @@
 class UserVO():
     def __init__(self, socio_id, nombre, apellidos, DNI, usuario, contrsena, email, telefono, fecha_alta):
-        self._codio_id = socio_id
+        self._socio_id = socio_id
         self._nombre = nombre
         self._apellidos = apellidos
         self._DNI = DNI

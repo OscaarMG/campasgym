@@ -11,4 +11,6 @@ if __name__ == "__main__":
     coordinador = CoordinadorPrincipal(ventanaLogin, modelo)
     ventanaLogin.controlador = coordinador
 
+    ventanaLogin.show()
+
     app.exec()
