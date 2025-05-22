@@ -3,6 +3,7 @@ from src.vista.SocioWindow import SocioWindow
 from src.vista.EntrenadorWindow import EntrenadorWindow
 from src.vista.AdministrativoWindow import AdministrativoWindow
 from src.vista.SocioPremiumWindow import SocioPremiumWindow
+from src.vista.AdministradorWindow import AdministradorWindow
 
 class CoordinadorPrincipal():
 
@@ -24,6 +25,8 @@ class CoordinadorPrincipal():
             self._ventanaActual = AdministrativoWindow()
         elif tipo_usuario == 'entrenador':
             self._ventanaActual = EntrenadorWindow()
+        elif tipo_usuario == 'administrador':
+            self._ventanaActual = AdministradorWindow()
         elif tipo_usuario == 'premium':
             self._ventanaActual = SocioPremiumWindow()
         else:
