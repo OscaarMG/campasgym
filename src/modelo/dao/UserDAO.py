@@ -25,7 +25,15 @@ class UserDAO(Conexion):
             
             # Consulta en tabla 3: clientes
             cursor.execute(
-                "SELECT 'socio' as tipo FROM socios WHERE usuario = ? AND contrasena = ?",
+                """SELECT 
+                    CASE 
+                        WHEN m.tipo = 'Premium' THEN 'premium' 
+                        WHEN m.tipo = 'Sencillo' THEN 'sencillo' 
+                        ELSE 'socio' 
+                    END as tipo
+                FROM socios so
+                LEFT JOIN membresias m ON so.id_socio = m.id_socio
+                WHERE so.usuario = ? AND so.contrasena = ?""",
                 [loginVO.usuario, loginVO.password]
             )
             resultado = cursor.fetchone()

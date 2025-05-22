@@ -18,6 +18,11 @@ class Login(QMainWindow, Form):
         texto_password = self.ContrasenaEdit.text()
         self._controlador.iniciarlogin(texto_usuario, texto_password)
 
+    def resetear(self):
+        """Limpia los campos del formulario al cerra sesión."""
+        self.UsuarioEdit.clear()
+        self.ContrasenaEdit.clear()
+
     @property
     def controlador(self):
         return self._controlador

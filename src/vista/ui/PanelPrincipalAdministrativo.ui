@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>141</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../recursos.qrc">:/imagenes/logo.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonCerrar">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>50</y>
+      <width>321</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cerrar sesión</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonRenovar">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>170</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Registrar usuario</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonRenovar_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>260</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gestionar usuario</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonRenovar_3">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>350</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gestionar monitor</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonRenovar_4">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>440</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gestionar inventario</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../recursos.qrc"/>
+  <include location="../../../../../../../../../../recursos.qrc"/>
+ </resources>
+ <connections/>
+</ui>
