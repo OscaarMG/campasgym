@@ -10,11 +10,16 @@ class AdministrativoWindow(QMainWindow, Form):
         self.setupUi(self)  # Inicializa los widgets
         # Conectar el botón a la función
         self.pushButtonCerrar.clicked.connect(self.cerrar_button_click)
+        self.pushButtonRegistrar.clicked.connect(self.abrir_registrar)
 
 
     def cerrar_button_click(self):
         print("Cerrando sesión")
         self._controlador.cerrarsesion()
+
+    def abrir_registrar(self):
+        print("Abriendo ventana de registro de usuario")
+        self._controlador.abrir_registrar()
 
     @property
     def controlador(self):

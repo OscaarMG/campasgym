@@ -135,7 +135,7 @@ border-radius: 5
      <property name="geometry">
       <rect>
        <x>110</x>
-       <y>390</y>
+       <y>340</y>
        <width>171</width>
        <height>31</height>
       </rect>
@@ -203,7 +203,32 @@ border-radius: 10
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>:/imagenes/foto_inicial.jpg</pixmap>
+      <pixmap resource="../recursos.qrc">:/imagenes/foto_inicial.jpg</pixmap>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BotonRecuContra">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>390</y>
+       <width>171</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(182, 119, 255, 255), stop:1 rgba(255, 255, 255, 255));
+border-radius: 10
+</string>
+     </property>
+     <property name="text">
+      <string>Recuperar contraseña</string>
      </property>
     </widget>
     <zorder>label_4</zorder>
@@ -213,6 +238,7 @@ border-radius: 10
     <zorder>UsuarioEdit</zorder>
     <zorder>ContrasenaEdit</zorder>
     <zorder>BotonAceptar</zorder>
+    <zorder>BotonRecuContra</zorder>
    </widget>
   </widget>
  </widget>

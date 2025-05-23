@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6 import uic
+from src.vista.RecuContra1 import RecuContra1
 
 # Cargar la interfaz generada desde el archivo .ui
 Form, Window = uic.loadUiType("./src/vista/ui/VistaLogin.ui")
@@ -10,7 +11,7 @@ class Login(QMainWindow, Form):
         self.setupUi(self)  # Inicializa los widgets
         # Conectar el botón a la función
         self.BotonAceptar.clicked.connect(self.on_button_click)
-
+        self.BotonRecuContra.clicked.connect(self.recuperar_contrasena)
 
     def on_button_click(self):
         print("Botón presionado")
@@ -23,6 +24,11 @@ class Login(QMainWindow, Form):
         self.UsuarioEdit.clear()
         self.ContrasenaEdit.clear()
 
+    def recuperar_contrasena(self):
+        self.ventana_recuperar = RecuContra1(self._controlador)
+        self.ventana_recuperar.show()
+        self.close()
+
     @property
     def controlador(self):
         return self._controlador
@@ -30,3 +36,4 @@ class Login(QMainWindow, Form):
     @controlador.setter
     def controlador(self, value):
         self._controlador = value
+
