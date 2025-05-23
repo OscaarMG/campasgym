@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CrearDieta</class>
+ <widget class="QWidget" name="CrearDieta">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Crear Dieta</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <item>
+    <widget class="QLabel" name="labelTitulo">
+     <property name="text">
+      <string>Crear Nueva Dieta</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:18pt; font-weight:bold;</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QLabel" name="labelNombreDieta">
+     <property name="text">
+      <string>Nombre de la Dieta:</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QLineEdit" name="lineEditNombreDieta">
+     <property name="placeholderText">
+      <string>Introduce el nombre de la dieta</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QComboBox" name="comboBoxAlimentos">
+     <property name="placeholderText">
+      <string>Selecciona un alimento</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnAñadirAlimento">
+     <property name="text">
+      <string>Añadir Alimento</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QListWidget" name="listaAlimentos"/>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnEliminarAlimento">
+     <property name="text">
+      <string>Eliminar Alimento Seleccionado</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QComboBox" name="comboBoxUsuarios">
+     <property name="placeholderText">
+      <string>Asignar dieta a usuario</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutBotones">
+     <item>
+      <widget class="QPushButton" name="btnGuardar">
+       <property name="text">
+        <string>Guardar Dieta</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancelar">
+       <property name="text">
+        <string>Cancelar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
