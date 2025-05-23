@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ListarSolicitudesRutina</class>
+ <widget class="QWidget" name="ListarSolicitudesRutina">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Solicitudes de Rutina</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <item>
+    <widget class="QLabel" name="labelTitulo">
+     <property name="text">
+      <string>Solicitudes de Rutina</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:16pt; font-weight:bold;</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QLineEdit" name="lineEditBuscar">
+     <property name="placeholderText">
+      <string>Buscar por nombre...</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QListWidget" name="listWidgetUsuarios"/>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutBotones">
+     <item>
+      <widget class="QPushButton" name="btnCrearRutina">
+       <property name="text">
+        <string>Crear Rutina</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnVolver">
+       <property name="text">
+        <string>Volver</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
