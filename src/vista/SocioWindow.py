@@ -8,7 +8,6 @@ class SocioWindow(QMainWindow, Form):
         super().__init__()
         self.setupUi(self)
         self._coordinador = None
-        self._modelo = None
         self.pushButtonCerrar.clicked.connect(self.cerrar_button_click)
 
     def cerrar_button_click(self):
@@ -24,15 +23,4 @@ class SocioWindow(QMainWindow, Form):
     def coordinador(self, value):
         self._coordinador = value
 
-    @property
-    def modelo(self):
-        return self._modelo
-
-    @modelo.setter
-    def modelo(self, value):
-        self._modelo = value
-
-    def mostrar_datos(self, datos):
-        # Implementa cómo mostrar los datos en la interfaz
-        pass
 

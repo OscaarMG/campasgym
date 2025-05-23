@@ -11,7 +11,8 @@ class AdministradorWindow(QMainWindow, Form):
         # Conectar el botón a la función
         self.pushButtonCerrar.clicked.connect(self.cerrar_button_click)
         self.pushButtonRegistrar.clicked.connect(self.abrir_registrar)
-
+        self.pushButtonGUsu.clicked.connect(self.abrir_gestionar_socio)
+        self.pushButtonGMon.clicked.connect(self.abrir_gestionar_monitor)
 
     def cerrar_button_click(self):
         print("Cerrando sesión")
@@ -20,6 +21,14 @@ class AdministradorWindow(QMainWindow, Form):
     def abrir_registrar(self):
         print("Abriendo ventana de registro de usuario")
         self._controlador.abrir_registrar()
+
+    def abrir_gestionar_socio(self):
+        print("Abriendo ventana de gestionar socio")
+        self._controlador.abrir_gestionar_socio()
+
+    def abrir_gestionar_monitor(self):
+        print("Abriendo ventana de gestionar socio")
+        self._controlador.abrir_gestionar_entrenador()
 
     @property
     def controlador(self):

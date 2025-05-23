@@ -98,35 +98,25 @@
           <item>
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Apellidos</string>
+             <string>Apellido 1</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineApellidos"/>
+           <widget class="QLineEdit" name="lineApellido1"/>
           </item>
           <item>
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Email</string>
+             <string>Apellido 2</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEmail"/>
+           <widget class="QLineEdit" name="lineApellido2"/>
           </item>
           <item>
            <widget class="QLabel" name="label_7">
-            <property name="text">
-             <string>DNI</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineDNI"/>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_5">
             <property name="text">
              <string>Nombre de Usuario</string>
             </property>
@@ -136,7 +126,7 @@
            <widget class="QLineEdit" name="lineUsuario"/>
           </item>
           <item>
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="label_5">
             <property name="text">
              <string>Contraseña</string>
             </property>
@@ -146,25 +136,54 @@
            <widget class="QLineEdit" name="lineContrasena"/>
           </item>
           <item>
-           <widget class="QLabel" name="label_8">
+           <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>Tipo de Usuario</string>
+             <string>Especialidad</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBoxTipoUsu">
-            <item>
-             <property name="text">
-              <string>Sencillo</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Premium</string>
-             </property>
-            </item>
+           <widget class="QLineEdit" name="lineEspecialidad"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Email</string>
+            </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEmail"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Número de teléfono</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineMovil"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Número de cuenta</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineCuenta"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Horario</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineHorario"/>
           </item>
           <item>
            <spacer name="horizontalSpacer_4">

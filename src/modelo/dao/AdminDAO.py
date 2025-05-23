@@ -29,3 +29,84 @@ class AdminDAO(Conexion):
         except Exception as e:
             print(f"Error en insertar_usuario: {e}")
             return False
+        
+    def obtener_socios(self):
+        try:
+            cursor = self.getCursor()
+            cursor.execute("SELECT s.id_socio, s.nombre, s.apellidos, s.dni, s.usuario, s.email, m.tipo FROM socios s LEFT JOIN membresias m ON s.id_socio = m.id_socio")
+            socios = cursor.fetchall()
+            return socios
+        except Exception as e:
+            print(f"Error en obtener_socios: {e}")
+            return []
+
+    def eliminar_socio(self, id_socio):
+        try:
+            cursor = self.getCursor()
+            cursor.execute("DELETE FROM Membresias WHERE id_socio = ?", [id_socio])
+            cursor.execute("DELETE FROM Socios WHERE id_socio = ?", [id_socio])
+            return True
+        except Exception as e:
+            print(f"Error en eliminar_socio: {e}")
+            return False
+
+    def modificar_socio(self, UserVO):
+        try:
+            cursor = self.getCursor()
+            cursor.execute(
+                "UPDATE Socios SET nombre = ?, apellidos = ?, dni = ?, usuario = ?, email = ? WHERE id_socio = ?",
+                [UserVO._nombre, UserVO._apellidos, UserVO._DNI, UserVO._usuario, UserVO._email, UserVO._id]
+            )
+            cursor.execute(
+                "UPDATE Membresias SET tipo = ? WHERE id_socio = ?",
+                [UserVO._tipo, UserVO._id]
+            )
+            return True
+        except Exception as e:
+            print(f"Error en modificar_socio: {e}")
+            return False
+        
+    def obtener_entrenadores(self):
+        try:
+            cursor = self.getCursor()
+            cursor.execute("""SELECT id_entrenador, nombre, apellido1, apellido2, usuario, especialidad, email, telefono, n_cuenta, horario, fecha_ingreso FROM entrenadores""")
+            return cursor.fetchall()
+        except Exception as e:
+            print(f"Error en obtener_entrenadores: {e}")
+            return []
+
+    def insertar_entrenador(self, entrenadorVO):
+        try:
+            cursor = self.getCursor()
+            fecha_ingreso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            cursor.execute("""
+                INSERT INTO entrenadores 
+                (nombre, apellido1, apellido2, usuario, contrasena, especialidad, email, telefono, n_cuenta, horario, fecha_ingreso)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                [entrenadorVO._nombre, entrenadorVO._apellido1, entrenadorVO._apellido2, entrenadorVO._usuario, entrenadorVO._contrasena, entrenadorVO._especialidad,
+                 entrenadorVO._email, entrenadorVO._telefono, entrenadorVO._n_cuenta, entrenadorVO._horario, fecha_ingreso])
+            return True
+        except Exception as e:
+            print(f"Error en insertar_entrenador: {e}")
+            return False
+
+    def eliminar_entrenador(self, id_entrenador):
+        try:
+            cursor = self.getCursor()
+            cursor.execute("DELETE FROM entrenadores WHERE id_entrenador = ?", [id_entrenador])
+            return True
+        except Exception as e:
+            print(f"Error en eliminar_entrenador: {e}")
+            return False
+
+    def modificar_entrenador(self, entrenadorVO):
+        try:
+            print(entrenadorVO._nombre)
+            cursor = self.getCursor()
+            cursor.execute("UPDATE entrenadores SET nombre = ?, apellido1 = ?, apellido2 = ?, usuario = ?, contrasena = ?, especialidad = ?, email = ?, telefono = ?, n_cuenta = ?, horario = ? WHERE id_entrenador = ?", [
+                entrenadorVO._nombre, entrenadorVO._apellido1, entrenadorVO._apellido2, entrenadorVO._usuario, entrenadorVO._contrasena, entrenadorVO._especialidad,
+                entrenadorVO._email, entrenadorVO._telefono, entrenadorVO._n_cuenta, entrenadorVO._horario, entrenadorVO._id_entrenador])
+            return True
+        except Exception as e:
+            print(f"Error en modificar_entrenador: {e}")
+            return False
