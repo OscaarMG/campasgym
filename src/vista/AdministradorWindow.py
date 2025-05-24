@@ -14,6 +14,7 @@ class AdministradorWindow(QMainWindow, Form):
         self.pushButtonGUsu.clicked.connect(self.abrir_gestionar_socio)
         self.pushButtonGMon.clicked.connect(self.abrir_gestionar_monitor)
         self.pushButtonGInv.clicked.connect(self.abrir_gestionar_inventario)
+        self.pushButtonGAdm.clicked.connect(self.abrir_gestionar_adm)
 
     def cerrar_button_click(self):
         print("Cerrando sesión")
@@ -28,12 +29,16 @@ class AdministradorWindow(QMainWindow, Form):
         self._controlador.abrir_gestionar_socio()
 
     def abrir_gestionar_monitor(self):
-        print("Abriendo ventana de gestionar socio")
+        print("Abriendo ventana de gestionar entrenadore")
         self._controlador.abrir_gestionar_entrenador()
 
     def abrir_gestionar_inventario(self):
-        print("Abriendo ventana de gestionar socio")
+        print("Abriendo ventana de gestionar inventario")
         self._controlador.abrir_gestionar_material()
+
+    def abrir_gestionar_adm(self):
+        print("Abriendo ventana de gestionar administrativos")
+        self._controlador.abrir_gestionar_adm()
 
     @property
     def controlador(self):

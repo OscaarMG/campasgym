@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Modificar / Registrar Monitor</string>
+   <string>Modificar / Registrar Administrativo</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -73,12 +73,12 @@
      <item row="5" column="0">
       <widget class="QLabel" name="labelEspecialidad">
        <property name="text">
-        <string>Especialidad:</string>
+        <string>Puesto:</string>
        </property>
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLineEdit" name="lineEditEspecialidad"/>
+      <widget class="QLineEdit" name="lineEditPuesto"/>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="labelEmail">

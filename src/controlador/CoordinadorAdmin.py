@@ -10,7 +10,9 @@ from src.modelo.vo.EntrenadorVO import EntrenadorVO
 from src.vista.GestionarMaterial import GestionarMaterial
 from src.vista.ModificarMaterial import ModificarMaterial
 from src.modelo.vo.MaterialVO import MaterialVO
-from src.vista.ModificarMaterial import ModificarMaterial
+from src.vista.GestionarAdm import GestionarAdm
+from src.vista.ModificarAdm import ModificarAdm
+from src.modelo.vo.AdmVO import AdmVO
 
 class CoordinadorAdmin:
     def __init__(self, ventana, modelo, coordinador_principal):
@@ -185,3 +187,63 @@ class CoordinadorAdmin:
 
     def modificar_material(self, materialVO):
         return self._modelo.modificar_material(materialVO)
+    
+    def abrir_gestionar_adm(self):
+        self._ventana.close()
+        self._ventana = GestionarAdm()
+        self._ventana.controlador = self
+        self._ventana.show()
+
+    def obtener_adms(self):
+        return self._modelo.obtener_adms()
+
+    def eliminar_adm(self, id_adm):
+        return self._modelo.eliminar_adm(id_adm)
+
+    def abrir_modificar_adm(self, id_adm):
+        self._ventana.close()
+        self._ventana = ModificarAdm()
+        self._ventana.controlador = self
+
+        adms = self.obtener_adms()
+        adm_datos = None
+        for a in adms:
+            if str(a[0]) == str(id_adm):
+                adm_datos = a
+                break
+
+        if not adm_datos:
+            print("Administrativo no encontrado")
+            return
+
+        admVO = AdmVO(
+            id_adm=adm_datos[0],
+            nombre=adm_datos[1],
+            apellido1=adm_datos[2],
+            apellido2=adm_datos[3],
+            usuario=adm_datos[4],
+            contrasena="",  # Por seguridad
+            puesto=adm_datos[5],
+            email=adm_datos[6],
+            telefono=adm_datos[7],
+            n_cuenta=adm_datos[8],
+            horario=adm_datos[9],
+            fecha_ingreso=adm_datos[10]
+        )
+
+        self._ventana.cargar_datos(admVO)
+        self._ventana.show()
+
+
+    def abrir_registrar_adm(self):
+        self._ventana.close()
+        self._ventana = ModificarAdm()
+        self._ventana.controlador = self
+        self._ventana.cargar_datos(None)
+        self._ventana.show()
+
+    def registrar_adm(self, adm_vo: AdmVO):
+        return self._modelo.registrar_adm(adm_vo)
+    
+    def modificar_adm(self, adm_vo: AdmVO):
+        return self._modelo.modificar_adm(adm_vo)

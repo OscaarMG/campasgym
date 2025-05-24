@@ -101,7 +101,6 @@ class AdminDAO(Conexion):
 
     def modificar_entrenador(self, entrenadorVO):
         try:
-            print(entrenadorVO._nombre)
             cursor = self.getCursor()
             cursor.execute("UPDATE entrenadores SET nombre = ?, apellido1 = ?, apellido2 = ?, usuario = ?, contrasena = ?, especialidad = ?, email = ?, telefono = ?, n_cuenta = ?, horario = ? WHERE id_entrenador = ?", [
                 entrenadorVO._nombre, entrenadorVO._apellido1, entrenadorVO._apellido2, entrenadorVO._usuario, entrenadorVO._contrasena, entrenadorVO._especialidad,
@@ -154,4 +153,48 @@ class AdminDAO(Conexion):
             return True
         except Exception as e:
             print(f"Error en eliminar_material: {e}")
+            return False
+
+    def obtener_adms(self):
+        try:
+            cursor = self.getCursor()
+            cursor.execute("""SELECT id_admin, nombre, apellido1, apellido2, usuario, puesto, email, telefono, n_cuenta, horario, fecha_ingreso FROM administracion""")
+            return cursor.fetchall()
+        except Exception as e:
+            print(f"Error en obtener_adms: {e}")
+            return []
+
+    def insertar_adm(self, admVO):
+        try:
+            cursor = self.getCursor()
+            fecha_ingreso = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            cursor.execute("""
+                INSERT INTO administracion 
+                (nombre, apellido1, apellido2, usuario, contrasena, puesto, email, telefono, n_cuenta, horario, fecha_ingreso)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                [admVO._nombre, admVO._apellido1, admVO._apellido2, admVO._usuario, admVO._contrasena, admVO._puesto,
+                 admVO._email, admVO._telefono, admVO._n_cuenta, admVO._horario, fecha_ingreso])
+            return True
+        except Exception as e:
+            print(f"Error en insertar_adm: {e}")
+            return False
+
+    def eliminar_adm(self, id_adm):
+        try:
+            cursor = self.getCursor()
+            cursor.execute("DELETE FROM administracion WHERE id_admin = ?", [id_adm])
+            return True
+        except Exception as e:
+            print(f"Error en eliminar_adm: {e}")
+            return False
+
+    def modificar_adm(self, admVO):
+        try:
+            cursor = self.getCursor()
+            cursor.execute("UPDATE administracion SET nombre = ?, apellido1 = ?, apellido2 = ?, usuario = ?, contrasena = ?, puesto = ?, email = ?, telefono = ?, n_cuenta = ?, horario = ? WHERE id_admin = ?", [
+                admVO._nombre, admVO._apellido1, admVO._apellido2, admVO._usuario, admVO._contrasena, admVO._puesto,
+                admVO._email, admVO._telefono, admVO._n_cuenta, admVO._horario, admVO._id_adm])
+            return True
+        except Exception as e:
+            print(f"Error en modificar_adm: {e}")
             return False
