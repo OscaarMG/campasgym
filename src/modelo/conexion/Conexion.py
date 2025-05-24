@@ -9,7 +9,17 @@ class Conexion:
             cls._instance._initialized = False
         return cls._instance
 
+    _instance = None  # Variable de clase para mantener la instancia Singleton
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super(Conexion, cls).__new__(cls)
+            cls._instance._initialized = False
+        return cls._instance
+
     def __init__(self, host='localhost', database='campasgym', user='CampasGym', password='CampasGym'):
+        if self._initialized:
+            return
         if self._initialized:
             return
         self._host = host
@@ -17,6 +27,7 @@ class Conexion:
         self._user = user
         self._password = password
         self.conexion = self.createConnection()
+        self._initialized = True
         self._initialized = True
 
     def createConnection(self):

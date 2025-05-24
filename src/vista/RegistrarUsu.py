@@ -10,6 +10,7 @@ class RegistrarUsu(QMainWindow, Form):
         self.setupUi(self)  # Inicializa los widgets
         self.pushButtonCrear.clicked.connect(self.registrar_usuario)  # Conecta el botón
         self.pushButtonCancelar.clicked.connect(self.volver_panel_principal)
+        self.pushButtonCancelar.clicked.connect(self.volver_panel_principal)
 
     def registrar_usuario(self):
         nombre = self.lineNombre.text()
@@ -25,6 +26,12 @@ class RegistrarUsu(QMainWindow, Form):
         else:
             QMessageBox.warning(self, "Error", "No se pudo registrar el usuario.")
 
+        self.controlador.volver_panel_principal()
+        self.close()
+
+    def volver_panel_principal(self):
+        if hasattr(self, "controlador"):
+            self.controlador.volver_panel_principal()
         self.controlador.volver_panel_principal()
         self.close()
 
