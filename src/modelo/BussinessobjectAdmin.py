@@ -32,6 +32,7 @@ class BussinessobjectAdmin:
 
     def modificar_entrenador(self, entrenadorVO):
         admin_dao = AdminDAO()
+        print(entrenadorVO._nombre)
         return admin_dao.modificar_entrenador(entrenadorVO)
     
     def obtener_materiales(self):
@@ -47,13 +48,18 @@ class BussinessobjectAdmin:
         return AdminDAO().eliminar_material(id_material)
     
     def obtener_adms(self):
-        return AdminDAO().obtener_adms()
+        admin_dao = AdminDAO()
+        return admin_dao.obtener_adms()
 
     def registrar_adm(self, admVO):
-        return AdminDAO().insertar_adm(admVO)
-
-    def modificar_adm(self, admVO):
-        return AdminDAO().modificar_adm(admVO)
+        admin_dao = AdminDAO()
+        return admin_dao.insertar_adm(admVO)
 
     def eliminar_adm(self, id_adm):
-        return AdminDAO().eliminar_adm(id_adm)
+        admin_dao = AdminDAO()
+        return admin_dao.eliminar_adm(id_adm)
+
+    def modificar_adm(self, admVO):
+        admin_dao = AdminDAO()
+        print(admVO._nombre)
+        return admin_dao.modificar_adm(admVO)

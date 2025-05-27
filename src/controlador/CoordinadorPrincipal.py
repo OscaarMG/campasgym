@@ -24,40 +24,40 @@ class CoordinadorPrincipal():
         
     def iniciarlogin(self, usuario, contrasena):
         loginVO = LoginVO(usuario, contrasena)
-        tipo_usuario = self._modelo.comprobarLogin(loginVO)
-        if not tipo_usuario:
+        usuario = self._modelo.comprobarLogin(loginVO)
+        if not usuario:
             print("Credenciales incorrectas")
             return
 
         self._ventanaLogin.close()
 
-        if tipo_usuario == 'administrativo':
+        if usuario[0] == 'administrativo':
             modelo_admin = BussinessobjectAdmin()
             self._ventanaActual = AdministrativoWindow()
             coordinador_admin = CoordinadorAdmin(self._ventanaActual, modelo_admin, self)
             self._ventanaActual.controlador = coordinador_admin
             self._ventanaActual.modelo = modelo_admin
-        elif tipo_usuario == 'entrenador':
+        elif usuario[0] == 'entrenador':
             modelo_entrenador = BussinessobjectEntrenador()
             self._ventanaActual = EntrenadorWindow()
             coordinador_entrenador = CoordinadorEntrenador(self._ventanaActual, modelo_entrenador, self)
             self._ventanaActual.controlador = coordinador_entrenador
             self._ventanaActual.modelo = modelo_entrenador
-        elif tipo_usuario == 'administrador':
+        elif usuario[0] == 'administrador':
             modelo_admin = BussinessobjectAdmin()
             self._ventanaActual = AdministradorWindow()
             coordinador_admin = CoordinadorAdmin(self._ventanaActual, modelo_admin, self)
             self._ventanaActual.controlador = coordinador_admin
             self._ventanaActual.modelo = modelo_admin
-        elif tipo_usuario == 'premium':
+        elif usuario[0] == 'premium':
             modelo_socio = BussinessobjectSocio()
-            self._ventanaActual = SocioPremiumWindow()
+            self._ventanaActual = SocioPremiumWindow(usuario[1])
             coordinador_socio = CoordinadorSocio(self._ventanaActual, modelo_socio, self)
             self._ventanaActual.controlador = coordinador_socio
             self._ventanaActual.modelo = modelo_socio
         else:
             modelo_socio = BussinessobjectSocio()
-            self._ventanaActual = SocioWindow()
+            self._ventanaActual = SocioWindow(usuario[1])
             coordinador_socio = CoordinadorSocio(self._ventanaActual, modelo_socio, self)
             self._ventanaActual.controlador = coordinador_socio
             self._ventanaActual.modelo = modelo_socio

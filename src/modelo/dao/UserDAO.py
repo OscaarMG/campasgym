@@ -12,7 +12,7 @@ class UserDAO(Conexion):
             )
             resultado = cursor.fetchone()
             if resultado:
-                return resultado[0]  # Retorna 'administrativo'
+                return resultado  # Retorna 'administrativo'
             
             cursor.execute(
                 "SELECT 'administrador' as tipo FROM administrador WHERE usuario = ? AND contrasena = ?",
@@ -20,16 +20,16 @@ class UserDAO(Conexion):
             )
             resultado = cursor.fetchone()
             if resultado:
-                return resultado[0]  # Retorna 'admin'
+                return resultado  # Retorna 'admin'
 
             # Consulta en tabla 2: entrenadores
             cursor.execute(
-                "SELECT 'entrenador' as tipo FROM entrenadores WHERE usuario = ? AND contrasena = ?",
+                "SELECT 'entrenador' as tipo, id_entrenador FROM entrenadores WHERE usuario = ? AND contrasena = ?",
                 [loginVO.usuario, loginVO.password]
             )
             resultado = cursor.fetchone()
             if resultado:
-                return resultado[0]  # Retorna 'entrenador'
+                return resultado  # Retorna 'entrenador'
             
             # Consulta en tabla 3: clientes
             cursor.execute(
@@ -38,7 +38,7 @@ class UserDAO(Conexion):
                         WHEN m.tipo = 'Premium' THEN 'premium' 
                         WHEN m.tipo = 'Sencillo' THEN 'sencillo' 
                         ELSE 'socio' 
-                    END as tipo
+                    END as tipo, so.id_socio
                 FROM socios so
                 LEFT JOIN membresias m ON so.id_socio = m.id_socio
                 WHERE so.usuario = ? AND so.contrasena = ?""",
@@ -46,7 +46,7 @@ class UserDAO(Conexion):
             )
             resultado = cursor.fetchone()
             
-            return resultado[0] if resultado else None
+            return resultado if resultado else None
             
         except Exception as e:
             print(f"Error en consultaLogin: {e}")

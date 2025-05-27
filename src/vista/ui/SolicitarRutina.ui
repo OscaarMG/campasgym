@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RutinasUsuario</class>
+ <widget class="QWidget" name="RutinasUsuario">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Mis Rutinas</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+
+   <item>
+    <widget class="QLabel" name="labelRutinas">
+     <property name="text">
+      <string>Rutinas Asignadas</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QTableWidget" name="tablaRutinas">
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <property name="rowCount">
+      <number>0</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Nombre</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Descripción</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnEliminarRutina">
+     <property name="text">
+      <string>Eliminar Rutina Seleccionada</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QLabel" name="labelSolicitar">
+     <property name="text">
+      <string>Solicitar Nueva Rutina</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QLabel" name="labelObjetivo">
+     <property name="text">
+      <string>Objetivo:</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QTextEdit" name="inputObjetivo"/>
+   </item>
+
+   <!-- Botones en línea horizontal -->
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutButtons">
+     <item>
+      <widget class="QPushButton" name="btnSolicitar">
+       <property name="text">
+        <string>Solicitar Rutina</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancelar">
+       <property name="text">
+        <string>Cancelar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+

@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Crear rutina</string>
+     <string>Rutinas</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonDieta">
@@ -69,7 +69,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Crear dieta</string>
+     <string>Dietas</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonClase">
