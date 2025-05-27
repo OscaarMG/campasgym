@@ -32,10 +32,4 @@ class RegistrarUsu(QMainWindow, Form):
     def volver_panel_principal(self):
         if hasattr(self, "controlador"):
             self.controlador.volver_panel_principal()
-        self.controlador.volver_panel_principal()
-        self.close()
-
-    def volver_panel_principal(self):
-        if hasattr(self, "controlador"):
-            self.controlador.volver_panel_principal()
         self.close()
