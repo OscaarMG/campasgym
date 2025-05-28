@@ -41,7 +41,7 @@ class UserDAO(Conexion):
                     END as tipo, so.id_socio
                 FROM socios so
                 LEFT JOIN membresias m ON so.id_socio = m.id_socio
-                WHERE so.usuario = ? AND so.contrasena = ?""",
+                WHERE so.usuario = ? AND so.contrasena = ? AND m.fecha_fin >= CURRENT_DATE""",
                 [loginVO.usuario, loginVO.password]
             )
             resultado = cursor.fetchone()

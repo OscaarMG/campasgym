@@ -61,6 +61,4 @@ class CoordinadorSocio:
         self._ventana.show()
 
     def dar_de_baja_socio(self, id_socio):
-        from src.modelo.BussinessobjectSocio import BussinessobjectSocio
-        buss = BussinessobjectSocio()
-        buss.eliminar_socio(id_socio)
+        self._modelo.eliminar_socio(id_socio)

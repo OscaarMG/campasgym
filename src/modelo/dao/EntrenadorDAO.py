@@ -30,12 +30,17 @@ class EntrenadorDAO(Conexion):
         
     def obtener_solicitudes_rutinas(self):
         try:
-            query = "SELECT id_solicitud, id_socio, objetivo, fecha_solicitud FROM solicitudes_rutina"
+            query = """
+                SELECT s.id_solicitud, s.id_socio, s.objetivo, s.fecha_solicitud
+                FROM solicitudes_rutina s
+                JOIN membresias m ON s.id_socio = m.socio_id
+                WHERE m.fecha_fin > CURRENT_DATE
+            """
             cursor = self.getCursor()
             cursor.execute(query)
             return cursor.fetchall()
         except Exception as e:
-            print(f"Error al insertar obtener solicitudes: {e}")
+            print(f"Error al obtener solicitudes: {e}")
             return False
 
     def obtener_rutinas(self):
@@ -81,14 +86,20 @@ class EntrenadorDAO(Conexion):
             print(f"Error al eliminar rutina: {e}")
             return False
         
+    
     def obtener_solicitudes_dietas(self):
         try:
-            query = "SELECT id_solicitud, id_socio, objetivo, fecha_solicitud FROM solicitudes_dieta"
+            query = """
+                SELECT s.id_solicitud, s.id_socio, s.objetivo, s.fecha_solicitud
+                FROM solicitudes_dieta s
+                JOIN membresias m ON s.id_socio = m.socio_id
+                WHERE m.fecha_fin > CURRENT_DATE
+            """
             cursor = self.getCursor()
             cursor.execute(query)
             return cursor.fetchall()
         except Exception as e:
-            print(f"Error al insertar obtener solicitudes: {e}")
+            print(f"Error al obtener solicitudes: {e}")
             return False
 
     def obtener_dietas(self):

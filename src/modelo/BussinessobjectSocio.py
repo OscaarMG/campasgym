@@ -27,6 +27,4 @@ class BussinessobjectSocio:
         return SocioDAO().solicitar_dieta(solicitarVO)
 
     def eliminar_socio(self, id_socio):
-        from src.modelo.dao.SocioDAO import SocioDAO
-        dao = SocioDAO()
-        dao.eliminar_socio(id_socio)
+        return SocioDAO().eliminar_socio(id_socio)

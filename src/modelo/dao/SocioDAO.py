@@ -109,6 +109,10 @@ class SocioDAO(Conexion):
             return False
 
     def eliminar_socio(self, id_socio):
-        cursor = self.getCursor()
-        sql = "DELETE FROM socios WHERE id_socio = ?"
-        cursor.execute(sql, (id_socio,))
+        try:
+            cursor = self.getCursor()
+            sql = "DELETE FROM socios WHERE id_socio = ?"
+            cursor.execute(sql, (id_socio,))
+        except Exception as e:
+            print("Error al eliminar socio:", e)
+            return False
