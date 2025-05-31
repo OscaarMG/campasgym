@@ -39,7 +39,7 @@ class EntrenadorDAO(Conexion):
             query = """
                 SELECT s.id_solicitud, s.id_socio, s.objetivo, s.fecha_solicitud
                 FROM solicitudes_rutina s
-                JOIN membresias m ON s.id_socio = m.socio_id
+                JOIN membresias m ON s.id_socio = m.id_socio
                 WHERE m.fecha_fin > CURRENT_TIMESTAMP
             """
             cursor = self.getCursor()
@@ -98,7 +98,7 @@ class EntrenadorDAO(Conexion):
             query = """
                 SELECT s.id_solicitud, s.id_socio, s.objetivo, s.fecha_solicitud
                 FROM solicitudes_dieta s
-                JOIN membresias m ON s.id_socio = m.socio_id
+                JOIN membresias m ON s.id_socio = m.id_socio
                 WHERE m.fecha_fin > CURRENT_TIMESTAMP
             """
             cursor = self.getCursor()
