@@ -28,3 +28,6 @@ class BussinessobjectSocio:
 
     def eliminar_socio(self, id_socio):
         return SocioDAO().eliminar_socio(id_socio)
+
+    def renovar_suscripcion(self, id_socio, tipo):
+        return SocioDAO().renovar_suscripcion(id_socio, tipo)
