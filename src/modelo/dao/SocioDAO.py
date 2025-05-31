@@ -1,5 +1,5 @@
 from src.modelo.conexion.Conexion import Conexion
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class SocioDAO(Conexion):
     
@@ -116,3 +116,14 @@ class SocioDAO(Conexion):
         except Exception as e:
             print("Error al eliminar socio:", e)
             return False
+
+    def renovar_suscripcion(self, id_socio, tipo):
+        try:
+            conexion = Conexion().createConnection()
+            cursor = conexion.cursor()
+            nueva_fecha = (datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d')
+            sql = "UPDATE Membresias SET tipo = ?, fecha_fin = ? WHERE id_socio = ?"
+            cursor.execute(sql, (tipo, nueva_fecha, id_socio))
+            cursor.close()
+        except Exception as e:
+            print("Error al renovar suscripción:", e)
