@@ -36,6 +36,9 @@ class CoordinadorSocio:
     def eliminar_rutina(self, eliminarVO):
         self._modelo.eliminar_rutina_asignada(eliminarVO)
 
+    def renovar_suscripcion(self, id_socio, tipo):
+        self._modelo.renovar_suscripcion(id_socio, tipo)
+
     def solicitar_rutina(self, solicitarVO):
         self._modelo.solicitar_rutina(solicitarVO)
     
