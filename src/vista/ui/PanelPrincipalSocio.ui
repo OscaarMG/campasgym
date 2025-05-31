@@ -14,77 +14,110 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButtonRenovar">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>240</y>
-      <width>671</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Renovar Suscripción</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonHistorial">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>420</y>
-      <width>671</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Ver historial de entrenamientos</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonCancelar">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>330</y>
-      <width>671</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Cancelar Suscripción</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>40</y>
-      <width>161</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../recursos.qrc">:/imagenes/logo.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButtonCerrar">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>80</y>
-      <width>321</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Cerrar sesión</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-41</y>
+         <width>771</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonCerrar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cerrar sesión</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonRenovar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Renovar Suscripción</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonCancelar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cancelar Suscripción</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <zorder>pushButtonRenovar</zorder>
+   <zorder>pushButtonCancelar</zorder>
+   <zorder>frame</zorder>
+   <zorder>pushButtonCerrar</zorder>
   </widget>
  </widget>
  <resources>
