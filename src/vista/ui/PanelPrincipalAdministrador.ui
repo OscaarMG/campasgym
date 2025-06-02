@@ -23,6 +23,13 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">    background-color: green;
+    color: white;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 14px;</string>
+    </property>
     <property name="text">
      <string>Cerrar sesión</string>
     </property>
@@ -92,6 +99,29 @@
      <string>Gestionar administrativo</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-8</y>
+      <width>801</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(2, 2, 2);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>pushButtonCerrar</zorder>
+   <zorder>pushButtonRegistrar</zorder>
+   <zorder>pushButtonGUsu</zorder>
+   <zorder>pushButtonGMon</zorder>
+   <zorder>pushButtonGInv</zorder>
+   <zorder>pushButtonGAdm</zorder>
   </widget>
  </widget>
  <resources/>
