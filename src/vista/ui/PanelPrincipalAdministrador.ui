@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>779</width>
+    <height>601</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,11 +24,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">    background-color: green;
-    color: white;
-    border-radius: 15px;
-    border: 1px solid gray;
-    font-size: 14px;</string>
+     <string notr="true">background-color: rgb(155, 255, 240);
+color: white;
+border-radius: 15px;
+border: 1px solid gray;
+font-size: 14px;
+</string>
     </property>
     <property name="text">
      <string>Cerrar sesión</string>
@@ -54,6 +55,13 @@
       <width>671</width>
       <height>71</height>
      </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">    background-color: transparent;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    color: lightgray</string>
     </property>
     <property name="text">
      <string>Registrar usuario</string>
@@ -127,7 +135,24 @@
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>901</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/imagenes/logo.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>label</zorder>
+   <zorder>label_2</zorder>
    <zorder>pushButtonCerrar</zorder>
    <zorder>pushButtonRegistrar</zorder>
    <zorder>pushButtonGUsu</zorder>
@@ -136,6 +161,8 @@
    <zorder>pushButtonGAdm</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="GitHub/campasgym/src/vista/recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>
