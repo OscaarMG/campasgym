@@ -1,9 +1,0 @@
-<RCC>
-  <qresource>
-    <file>imagenes/logo.png</file>
-    <file>imagenes/foto_inicial.jpg</file>
-  </qresource>
-  <qresource>
-    <file>logo/Wikimedia_Brand_Guidelines_Update_2022_Wikimedia_Logo_Brandmark.png</file>
-  </qresource>
-</RCC>

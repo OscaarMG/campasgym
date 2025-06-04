@@ -8,6 +8,7 @@ class RecuContra1(QMainWindow, Form):
     def __init__(self, controlador):
         super().__init__()
         self.setupUi(self)
+        self.setFixedSize(self.size())
         self.controlador = controlador
         self.BotonAceptar.clicked.connect(self.abrir_recucontra2)
 

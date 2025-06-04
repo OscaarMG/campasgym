@@ -7,95 +7,226 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>662</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="pushButtonCerrar">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Cerrar sesión</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButtonRenovar">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Renovar Suscripción</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButtonCancelar">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Cancelar Suscripción</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButtonRutina">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Solicitar rutina de entrenamiento</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButtonDieta">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Solicitar dieta</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButtonClase">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>150</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Apuntarse a clase grupal</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <widget class="QPushButton" name="pushButtonCerrar">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>30</y>
+      <width>321</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>321</width>
+      <height>61</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
+    <property name="text">
+     <string>Cerrar sesión</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonCancelar">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>260</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>671</width>
+      <height>61</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
+    <property name="text">
+     <string>Cancelar Suscripción</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonRutina">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>350</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>671</width>
+      <height>61</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
+    <property name="text">
+     <string>Solicitar rutina de entrenamiento</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonDieta">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>440</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>671</width>
+      <height>61</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
+    <property name="text">
+     <string>Solicitar dieta</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonClase">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>530</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>671</width>
+      <height>61</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
+    <property name="text">
+     <string>Apuntarse a clase grupal</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonRenovar">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>170</y>
+      <width>671</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>671</width>
+      <height>61</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
+    <property name="text">
+     <string>Renovar Suscripción</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-4</x>
+      <y>-8</y>
+      <width>901</width>
+      <height>671</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/src/vista/imagenes/logo.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label</zorder>
+   <zorder>pushButtonCerrar</zorder>
+   <zorder>pushButtonCancelar</zorder>
+   <zorder>pushButtonRutina</zorder>
+   <zorder>pushButtonDieta</zorder>
+   <zorder>pushButtonClase</zorder>
+   <zorder>pushButtonRenovar</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>

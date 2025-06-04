@@ -7,6 +7,7 @@ class RenovarSuscripcion(QMainWindow, Form):
     def __init__(self, controlador, id_socio):
         super().__init__()
         self.setupUi(self)
+        self.setFixedSize(self.size())
         self.controlador = controlador
         self.id_socio = id_socio
 

@@ -9,6 +9,7 @@ class Login(QMainWindow, Form):
     def __init__(self):
         super().__init__()
         self.setupUi(self)  # Inicializa los widgets
+        self.setFixedSize(self.size())
         # Conectar el botón a la función
         self.BotonAceptar.clicked.connect(self.on_button_click)
         self.BotonRecuContra.clicked.connect(self.recuperar_contrasena)

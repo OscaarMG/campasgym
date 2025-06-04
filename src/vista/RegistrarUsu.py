@@ -8,6 +8,7 @@ class RegistrarUsu(QMainWindow, Form):
     def __init__(self):
         super().__init__()
         self.setupUi(self)  # Inicializa los widgets
+        self.setFixedSize(self.size())
         self.pushButtonCrear.clicked.connect(self.registrar_usuario)  # Conecta el botón
         self.pushButtonCancelar.clicked.connect(self.volver_panel_principal)
         self.pushButtonCancelar.clicked.connect(self.volver_panel_principal)

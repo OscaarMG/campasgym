@@ -17,17 +17,17 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>20</y>
-      <width>141</width>
-      <height>121</height>
+      <x>-60</x>
+      <y>0</y>
+      <width>961</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../recursos.qrc">:/imagenes/logo.png</pixmap>
+     <pixmap resource="../Documents/GitHub/campasgym/src/vista/recursos.qrc">:/imagenes/logo.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -42,6 +42,13 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+border-radius: 15px;
+border: 1px solid white;
+font-size: 18px;
+font-weight: bold;</string>
+    </property>
     <property name="text">
      <string>Cerrar sesión</string>
     </property>
@@ -54,6 +61,18 @@
       <width>671</width>
       <height>61</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
     </property>
     <property name="text">
      <string>Registrar usuario</string>
@@ -68,6 +87,18 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
     <property name="text">
      <string>Gestionar usuario</string>
     </property>
@@ -80,6 +111,18 @@
       <width>671</width>
       <height>61</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
     </property>
     <property name="text">
      <string>Gestionar monitor</string>
@@ -94,6 +137,18 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255, 210);
+text-decoration: underline;
+font: 8pt &quot;MS Shell Dlg 2&quot;;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+border: none;
+border-radius: 15px; 
+color: black;
+font-weight: bold;
+text-decoration: none;
+</string>
+    </property>
     <property name="text">
      <string>Gestionar inventario</string>
     </property>
@@ -101,7 +156,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../recursos.qrc"/>
+  <include location="../Documents/GitHub/campasgym/src/vista/recursos.qrc"/>
  </resources>
  <connections/>
 </ui>

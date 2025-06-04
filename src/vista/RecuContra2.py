@@ -8,6 +8,7 @@ class RecuContra2(QMainWindow, Form):
     def __init__(self, correo, controlador, usuario):
         super().__init__()
         self.setupUi(self)
+        self.setFixedSize(self.size())
         self.correo = correo
         self.controlador = controlador
         self.usuario = usuario

@@ -8,6 +8,7 @@ class EntrenadorWindow(QMainWindow, Form):
     def __init__(self, id_entrenador):
         super().__init__()
         self.setupUi(self)  # Inicializa los widgets
+        self.setFixedSize(self.size())
         # Conectar el botón a la función
         self.id_entrenador = id_entrenador
         self.pushButtonCerrar.clicked.connect(self.cerrar_button_click)
