@@ -7,17 +7,34 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>700</height>
+    <height>488</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Crear Clase Grupal</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:#000000</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="labelTitulo">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
      <property name="styleSheet">
-      <string notr="true">font-size:18pt; font-weight:bold;</string>
+      <string notr="true">QLabel {
+    background-color: #2b2b2b;     
+    color: #ff4c4c;              
+    border: 2px solid #cc0000;     
+    padding: 2px;
+    font-size: 8px;
+    font-weight: bold;
+    border-radius: 6px;
+	font-size:15pt; font-weight:bold;}</string>
      </property>
      <property name="text">
       <string>Crear Nueva Clase Grupal</string>
@@ -29,6 +46,15 @@
    </item>
    <item>
     <widget class="QLabel" name="labelTipoClase">
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+    color: #ff4c4c;              
+    font-size: 10px;
+    font-weight: bold;
+    padding-bottom: 1.3px;
+}
+</string>
+     </property>
      <property name="text">
       <string>Tipo de Clase:</string>
      </property>
@@ -36,6 +62,31 @@
    </item>
    <item>
     <widget class="QComboBox" name="comboBoxTipoClase">
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    background-color: #2b2b2b;   
+    color: white;                    
+    border: 1.5px solid #777777;     
+    padding: 1px;
+    border-radius: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #777777;
+    background-color: #3a3a3a;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #2b2b2b;
+    color: white;
+    selection-background-color: #444444;
+    selection-color: #ff4c4c;     
+    border: 1px solid #555555;
+}</string>
+     </property>
      <property name="placeholderText">
       <string>Selecciona tipo de clase</string>
      </property>
@@ -68,16 +119,47 @@
    </item>
    <item>
     <widget class="QLabel" name="labelHorario">
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+    color: #ff4c4c;              
+    font-size: 10px;
+    font-weight: bold;
+    padding-bottom: 1.3px;
+}
+</string>
+     </property>
      <property name="text">
       <string>Horario (formato: 2025-04-01 10:00:00)</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEditHorario"/>
+    <widget class="QLineEdit" name="lineEditHorario">
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background-color: #2b2b2b;      
+    color: white;                   
+    border: 1.5px solid #777777;     
+    padding: 1px;
+    border-radius: 4px;
+    selection-background-color: #444444;
+    selection-color: #ff4c4c;        
+}
+</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="labelSala">
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+    color: #ff4c4c;              
+    font-size: 10px;
+    font-weight: bold;
+    padding-bottom: 1.3px;
+}
+</string>
+     </property>
      <property name="text">
       <string>Sala:</string>
      </property>
@@ -85,6 +167,31 @@
    </item>
    <item>
     <widget class="QComboBox" name="comboBoxSala">
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    background-color: #2b2b2b;   
+    color: white;                    
+    border: 1.5px solid #777777;     
+    padding: 1px;
+    border-radius: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #777777;
+    background-color: #3a3a3a;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #2b2b2b;
+    color: white;
+    selection-background-color: #444444;
+    selection-color: #ff4c4c;     
+    border: 1px solid #555555;
+}</string>
+     </property>
      <property name="placeholderText">
       <string>Selecciona una sala</string>
      </property>
@@ -117,6 +224,15 @@
    </item>
    <item>
     <widget class="QLabel" name="labelCupoMaximo">
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+    color: #ff4c4c;              
+    font-size: 10px;
+    font-weight: bold;
+    padding-bottom: 1.3px;
+}
+</string>
+     </property>
      <property name="text">
       <string>Cupo máximo:</string>
      </property>
@@ -124,6 +240,31 @@
    </item>
    <item>
     <widget class="QSpinBox" name="spinBoxCupoMaximo">
+     <property name="styleSheet">
+      <string notr="true">QSpinBox {
+    background-color: #2b2b2b;   
+    color: white;                    
+    border: 1.5px solid #777777;     
+    padding: 1px;
+    border-radius: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #777777;
+    background-color: #3a3a3a;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #2b2b2b;
+    color: white;
+    selection-background-color: #444444;
+    selection-color: #ff4c4c;     
+    border: 1px solid #555555;
+}</string>
+     </property>
      <property name="minimum">
       <number>1</number>
      </property>
@@ -137,18 +278,57 @@
    </item>
    <item>
     <widget class="QLabel" name="labelSociosApuntados">
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+    color: #ff4c4c;              
+    font-size: 10px;
+    font-weight: bold;
+    padding-bottom: 1.3px;
+}
+</string>
+     </property>
      <property name="text">
       <string>Descripción:</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QTextEdit" name="textEdit"/>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit {
+    background-color: #000000;
+    border: 1.5px solid #f0f0f0;
+    color: #f0f0f0;
+    padding: 2px;
+    border-radius: 4px;
+}</string>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayoutBotones">
      <item>
       <widget class="QPushButton" name="btnGuardar">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #da0000;
+    color: white;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #aa0000;
+}</string>
+       </property>
        <property name="text">
         <string>Guardar Clase</string>
        </property>
@@ -156,6 +336,20 @@
      </item>
      <item>
       <widget class="QPushButton" name="btnCancelar">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #da0000;
+    color: white;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #aa0000;
+}</string>
+       </property>
        <property name="text">
         <string>Cancelar</string>
        </property>
@@ -166,7 +360,12 @@
    <item>
     <widget class="QLabel" name="labelTusClases">
      <property name="styleSheet">
-      <string notr="true">font-weight: bold; font-size: 14pt;</string>
+      <string notr="true">QLabel{
+    color: #ff4c4c;              
+    font-size: 10px;
+    font-weight: bold;
+    padding-bottom: 1.3px;
+	font-weight: bold; font-size: 14pt;}</string>
      </property>
      <property name="text">
       <string>Tus clases</string>
@@ -174,10 +373,40 @@
     </widget>
    </item>
    <item>
-    <widget class="QListWidget" name="listWidgetClases"/>
+    <widget class="QListWidget" name="listWidgetClases">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>175</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QListWidget {
+    background-color: #000000;
+    border: 1.5px solid #f0f0f0;
+    color: #f0f0f0;
+    padding: 2px;
+    border-radius: 4px;
+}</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QPushButton" name="btnCancelarClase">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #da0000;
+    color: white;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #aa0000;
+}</string>
+     </property>
      <property name="text">
       <string>Cancelar Clase</string>
      </property>
