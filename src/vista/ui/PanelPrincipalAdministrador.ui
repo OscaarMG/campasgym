@@ -192,7 +192,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/imagenes/logo.png);</string>
+     <string notr="true">border-image: url(:/src/vista/imagenes/logo.png);</string>
     </property>
     <property name="text">
      <string/>
@@ -209,7 +209,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
   </widget>
  </widget>
  <resources>
-  <include location="../Documents/GitHub/campasgym/src/vista/recursos.qrc"/>
+  <include location="../../../recursos.qrc"/>
  </resources>
  <connections/>
 </ui>
