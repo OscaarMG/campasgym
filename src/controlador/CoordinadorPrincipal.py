@@ -10,6 +10,8 @@ from src.modelo.BussinessobjectAdmin import BussinessobjectAdmin
 from src.controlador.CoordinadorEntrenador import CoordinadorEntrenador
 from src.modelo.BussinessobjectEntrenador import BussinessobjectEntrenador
 from src.controlador.CoordinadorSocio import CoordinadorSocio
+from src.vista.RecuContra2 import RecuContra2
+from src.vista.RecuContra1 import RecuContra1
 
 class CoordinadorPrincipal():
 
@@ -77,4 +79,15 @@ class CoordinadorPrincipal():
 
     def verificarCorreo(self, usuario):
         return self._modelo.verificarCorreo(usuario)
-
+    
+    def abrir_recucontra1(self):
+        self._ventanaLogin.close()
+        self._ventanaActual = RecuContra1()
+        self._ventanaActual.controlador = self
+        self._ventanaActual.show()
+    
+    def abrir_recucontra2(self, correo, usuario):
+        self._ventanaLogin.close()
+        self._ventanaActual = RecuContra2(correo, usuario)
+        self._ventanaActual.controlador = self
+        self._ventanaActual.show()

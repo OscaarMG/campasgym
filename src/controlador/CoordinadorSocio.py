@@ -1,6 +1,7 @@
 from src.vista.VerClasesDisponibles import VerClasesDisponibles
 from src.vista.SolicitarRutina import SolicitarRutina
 from src.vista.SolicitarDieta import SolicitarDieta
+from src.vista.RenovarSuscripcion import RenovarSuscripcion
 
 class CoordinadorSocio:
 
@@ -65,3 +66,9 @@ class CoordinadorSocio:
 
     def dar_de_baja_socio(self, id_socio):
         self._modelo.eliminar_socio(id_socio)
+
+    def abrir_renovar_suscripcion(self, id_socio):
+        self._ventana.close()
+        self._ventana = RenovarSuscripcion(id_socio)
+        self._ventana.controlador = self
+        self._ventana.show()
