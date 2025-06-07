@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../logo/Wikimedia_Brand_Guidelines_Update_2022_Wikimedia_Logo_Brandmark.png</normaloff>../logo/Wikimedia_Brand_Guidelines_Update_2022_Wikimedia_Logo_Brandmark.png</iconset>
+    <normaloff>../campasgym/src/vista/logo/Wikimedia_Brand_Guidelines_Update_2022_Wikimedia_Logo_Brandmark.png</normaloff>../campasgym/src/vista/logo/Wikimedia_Brand_Guidelines_Update_2022_Wikimedia_Logo_Brandmark.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -88,11 +88,12 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(74, 30, 134, 0);
+      <string notr="true">background-color: #6d6d6d;
 border: none;
-border-bottom: 3px solid rgba(85, 0, 255, 200);
-border-radius: 5
-</string>
+border-bottom: 3px solid;
+border-color:#da0000;
+border-radius: 5px;
+color: white;</string>
      </property>
      <property name="text">
       <string/>
@@ -118,10 +119,12 @@ border-radius: 5
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(74, 30, 134, 0);
+      <string notr="true">background-color: #6d6d6d;
 border: none;
-border-bottom: 3px solid rgba(85, 0, 255, 200);
-border-radius: 5
+border-bottom: 3px solid;
+border-color:#da0000;
+border-radius: 5px;
+color: white;
 </string>
      </property>
      <property name="echoMode">
@@ -142,15 +145,24 @@ border-radius: 5
      </property>
      <property name="font">
       <font>
-       <pointsize>13</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(182, 119, 255, 255), stop:1 rgba(255, 255, 255, 255));
-border-radius: 10
-</string>
+      <string notr="true">QPushButton {
+    background-color: #da0000;
+    color: white;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #aa0000;
+}</string>
      </property>
      <property name="text">
       <string>Aceptar</string>
@@ -166,7 +178,7 @@ border-radius: 10
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(220, 220, 220, 165);
+      <string notr="true">background-color: #6d6d6d;
 border-radius: 10
 </string>
      </property>
@@ -199,11 +211,14 @@ border-radius: 10
        <height>521</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#000000</string>
+     </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../recursos.qrc">:/imagenes/foto_inicial.jpg</pixmap>
+      <pixmap>:/imagenes/foto_inicial.jpg</pixmap>
      </property>
     </widget>
     <widget class="QPushButton" name="BotonRecuContra">
@@ -217,15 +232,24 @@ border-radius: 10
      </property>
      <property name="font">
       <font>
-       <pointsize>8</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
+       <pointsize>-1</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(182, 119, 255, 255), stop:1 rgba(255, 255, 255, 255));
-border-radius: 10
-</string>
+      <string notr="true">QPushButton {
+    background-color: #da0000;
+    color: white;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #aa0000;
+}</string>
      </property>
      <property name="text">
       <string>Recuperar contraseña</string>
@@ -243,7 +267,7 @@ border-radius: 10
   </widget>
  </widget>
  <resources>
-  <include location="../recursos.qrc"/>
+  <include location="../campasgym/src/vista/recursos.qrc"/>
  </resources>
  <connections/>
 </ui>
