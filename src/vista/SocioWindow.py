@@ -15,7 +15,6 @@ class SocioWindow(QMainWindow, Form):
 
     def cerrar_button_click(self):
         print("Cerrando sesión")
-        QMessageBox.information(self, "Cerrar sesión", "Sesión cerrada correctamente.")
         if self._controlador:
             self._controlador.cerrarsesion()
 
