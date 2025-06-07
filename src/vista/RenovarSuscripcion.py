@@ -4,15 +4,22 @@ from PyQt6 import uic
 Form, _ = uic.loadUiType("src/vista/ui/RenovarSuscripcion.ui")
 
 class RenovarSuscripcion(QMainWindow, Form):
-    def __init__(self, controlador, id_socio):
+    def __init__(self, id_socio):
         super().__init__()
         self.setupUi(self)
         self.setFixedSize(self.size())
-        self.controlador = controlador
         self.id_socio = id_socio
 
         self.pushButtonAceptar.clicked.connect(self.renovar)
-        self.pushButtonCancelar.clicked.connect(self.close)
+        self.pushButtonCancelar.clicked.connect(self.volver_panel_principal)
+
+    @property
+    def controlador(self):
+        return self._controlador
+
+    @controlador.setter
+    def controlador(self, value):
+        self._controlador = value
 
     def renovar(self):
         tipo = self.comboBoxTipo.currentText().lower()
@@ -30,3 +37,7 @@ class RenovarSuscripcion(QMainWindow, Form):
             self.close()
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Fallo al renovar: {str(e)}")
+
+    def volver_panel_principal(self):
+        self.controlador.volver_panel_principal()
+        self.close()

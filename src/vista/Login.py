@@ -26,9 +26,7 @@ class Login(QMainWindow, Form):
         self.ContrasenaEdit.clear()
 
     def recuperar_contrasena(self):
-        self.ventana_recuperar = RecuContra1(self._controlador)
-        self.ventana_recuperar.show()
-        self.close()
+        self._controlador.abrir_recucontra1()
 
     @property
     def controlador(self):

@@ -5,12 +5,11 @@ import random
 Form, Window = uic.loadUiType("./src/vista/ui/RecuContra2.ui")
 
 class RecuContra2(QMainWindow, Form):
-    def __init__(self, correo, controlador, usuario):
+    def __init__(self, correo, usuario):
         super().__init__()
         self.setupUi(self)
         self.setFixedSize(self.size())
         self.correo = correo
-        self.controlador = controlador
         self.usuario = usuario
         self.codigo = str(random.randint(100000, 999999))
         self.mostrar_mensaje()
@@ -38,3 +37,11 @@ class RecuContra2(QMainWindow, Form):
     def cerrar_ventana(self):
         self.controlador.ventana_login.show()
         self.close()
+
+    @property
+    def controlador(self):
+        return self._controlador
+
+    @controlador.setter
+    def controlador(self, value):
+        self._controlador = value
