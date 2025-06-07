@@ -13,173 +13,97 @@
   <property name="windowTitle">
    <string>Clases Disponibles</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: #000000;
-</string>
-  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTableWidget" name="tablaClases">
-     <property name="maximumSize">
-      <size>
-       <width>367</width>
-       <height>16777215</height>
-      </size>
-     </property>
+    <widget class="QFrame" name="contenedorPrincipal">
      <property name="styleSheet">
-      <string notr="true">QTableWidget {
-    background-color: #6d6d6d;
-    color: white;
-    gridline-color: #888888; 
-    border: 1px solid #444444;
+      <string notr="true">
+QFrame {
+    background-color: #000000;
 }
-
-QTableWidget::item {
-    background-color: #7d7d7d;
-    border: 1px solid #555555;
-    padding: 4px;
-}
-
+</string>
+     </property>
+     <layout class="QVBoxLayout" name="innerLayout">
+      <item>
+       <widget class="QTableWidget" name="tablaClases">
+        <property name="maximumSize">
+         <size>
+          <width>367</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
 QTableWidget {
     background-color: #6d6d6d;
     color: white;
-    gridline-color: #888888; /* color del borde entre celdas */
+    gridline-color: #888888;
     border: 1px solid #444444;
 }
-
 QTableWidget::item {
     background-color: #7d7d7d;
     border: 1px solid #555555;
     padding: 4px;
 }
-
 QHeaderView::section {
     background-color: #5d5d5d;
     color: white;
     border: 1px solid #444444;
     padding: 4px;
 }
-
 QTableCornerButton::section {
     background-color: #5d5d5d;
     border: 1px solid #444444;
 }
-
 QScrollBar:vertical {
-    background: #5d5d5d;  /* Fondo liso, sin textura */
+    background: #5d5d5d;
     width: 12px;
     margin: 0px;
     border: none;
 }
-
 QScrollBar::handle:vertical {
-    background: #888888;  /* Parte que se arrastra */
+    background: #888888;
     min-height: 20px;
     border-radius: 4px;
 }
-
 QScrollBar::add-line:vertical,
 QScrollBar::sub-line:vertical {
     height: 0px;
     background: none;
     border: none;
 }
-
 QScrollBar:horizontal {
     background: #5d5d5d;
     height: 12px;
     margin: 0px;
     border: none;
 }
-
 QScrollBar::handle:horizontal {
     background: #888888;
     min-width: 20px;
     border-radius: 4px;
 }
-
 QScrollBar::add-line:horizontal,
 QScrollBar::sub-line:horizontal {
     width: 0px;
     background: none;
     border: none;
 }
-
 QTableWidget QLineEdit {
     background-color: #5d5d5d;
     color: white;
     border: 1px solid #777777;
     padding: 2px;
 }
-
 </string>
-     </property>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>Nueva fila</string>
-      </property>
-     </row>
-     <column>
-      <property name="text">
-       <string>Nueva columna</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Nueva columna</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Nueva columna</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Nueva columna</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btnApuntarse">
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnApuntarse">
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -187,20 +111,21 @@ QTableWidget QLineEdit {
     font-size: 14px;
     font-weight: bold;
 }
-
 QPushButton:hover {
     background-color: #aa0000;
-}</string>
-     </property>
-     <property name="text">
-      <string>Apuntarse</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="btnVolver">
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Apuntarse</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnVolver">
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -208,15 +133,17 @@ QPushButton:hover {
     font-size: 14px;
     font-weight: bold;
 }
-
 QPushButton:hover {
     background-color: #aa0000;
 }
 </string>
-     </property>
-     <property name="text">
-      <string>Volver</string>
-     </property>
+        </property>
+        <property name="text">
+         <string>Volver</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
@@ -224,3 +151,4 @@ QPushButton:hover {
  <resources/>
  <connections/>
 </ui>
+

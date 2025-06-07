@@ -8,7 +8,7 @@ class SolicitarDieta(QWidget):
     def __init__(self, id_socio):
         super().__init__()
         uic.loadUi('src/vista/ui/SolicitarDieta.ui', self)
-
+        self.setFixedSize(self.size())
         self.id_socio = id_socio
         
 

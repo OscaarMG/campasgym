@@ -6,7 +6,7 @@ class ModificarSocio(QWidget):
     def __init__(self, datos_socio):
         super().__init__()
         uic.loadUi("./src/vista/ui/ModificarSocio.ui", self)
-
+        self.setFixedSize(self.size())
         # Rellenar campos
         self.id_socio = datos_socio[0]
         self.txtNombre.setText(datos_socio[1])

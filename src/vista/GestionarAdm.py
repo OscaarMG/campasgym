@@ -7,7 +7,7 @@ class GestionarAdm(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("./src/vista/ui/GestionarAdm.ui", self)
-
+        self.setFixedSize(self.size())
         self.btnEliminar.clicked.connect(self.eliminar_adm)
         self.btnModificar.clicked.connect(self.modificar_adm)
         self.btnRegistrar.clicked.connect(self.registrar_adm)

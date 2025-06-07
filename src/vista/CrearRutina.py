@@ -8,7 +8,7 @@ class CrearRutina(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi('src/vista/ui/CrearRutina.ui', self)
-
+        self.setFixedSize(self.size())
         self.btnCrear.clicked.connect(self.crear_rutina)
         self.btnAsignar.clicked.connect(self.asignar_rutina)
         self.btnEliminar.clicked.connect(self.eliminar_rutina)

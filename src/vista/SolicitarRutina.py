@@ -8,7 +8,7 @@ class SolicitarRutina(QWidget):
     def __init__(self, id_socio):
         super().__init__()
         uic.loadUi('src/vista/ui/SolicitarRutina.ui', self)
-
+        self.setFixedSize(self.size())
         self.id_socio = id_socio
         
 

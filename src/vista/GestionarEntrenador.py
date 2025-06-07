@@ -7,7 +7,7 @@ class GestionarEntrenador(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("./src/vista/ui/GestionarEnt.ui", self)
-
+        self.setFixedSize(self.size())
         self.btnEliminar.clicked.connect(self.eliminar_entrenador)
         self.btnModificar.clicked.connect(self.modificar_entrenador)
         self.btnRegistrar.clicked.connect(self.registrar_entrenador)

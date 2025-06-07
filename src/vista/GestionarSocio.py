@@ -7,6 +7,7 @@ class GestionarSocio(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("./src/vista/ui/GestionUsu.ui", self)
+        self.setFixedSize(self.size())
         self.btnEliminar.clicked.connect(self.eliminar_usuario)
         self.btnModificar.clicked.connect(self.modificar_usuario)
         self.filterLineEdit.textChanged.connect(self.filtrar)

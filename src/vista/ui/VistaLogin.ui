@@ -145,7 +145,7 @@ color: white;
      </property>
      <property name="font">
       <font>
-       <pointsize>-1</pointsize>
+       <pointsize>10</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -232,7 +232,7 @@ border-radius: 10
      </property>
      <property name="font">
       <font>
-       <pointsize>-1</pointsize>
+       <pointsize>10</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>

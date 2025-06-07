@@ -7,7 +7,7 @@ class ModificarEntrenador(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("./src/vista/ui/ModificarMonitor.ui", self)
-
+        self.setFixedSize(self.size())
         self.btnGuardar.clicked.connect(self.guardar)
         self.btnCancelar.clicked.connect(self.volver_panel_principal)
 

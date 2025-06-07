@@ -8,7 +8,7 @@ class VerClasesDisponibles(QWidget):
         super().__init__()
         uic.loadUi('src/vista/ui/VerClasesDisponibles.ui', self)
         self.id_socio = id_socio
-
+        self.setFixedSize(self.size())
         self.btnApuntarse.clicked.connect(self.apuntarse_clase)
         self.btnVolver.clicked.connect(self.volver_panel_principal)
     

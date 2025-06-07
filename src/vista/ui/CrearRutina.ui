@@ -260,7 +260,7 @@ QTableWidget QLineEdit {
     color: #ff4c4c;              
     border: 2px solid #cc0000;     
     padding: 4px;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 6px;
 }
@@ -295,7 +295,7 @@ QLabel {
     color: #ff4c4c;              
     border: 2px solid #cc0000;     
     padding: 4px;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 6px;
 }

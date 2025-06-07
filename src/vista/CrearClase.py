@@ -6,7 +6,7 @@ class CrearClase(QWidget):
     def __init__(self, id_entrenador):
         super().__init__()
         uic.loadUi("./src/vista/ui/crear_clase_grupal.ui", self)
-
+        self.setFixedSize(self.size())
         self.btnGuardar.clicked.connect(self.guardar_clase)
         self.btnCancelarClase.clicked.connect(self.cancelar_clase_seleccionada)
         self.btnCancelar.clicked.connect(self.cancelar)

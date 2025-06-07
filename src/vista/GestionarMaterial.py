@@ -7,7 +7,7 @@ class GestionarMaterial(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("./src/vista/ui/GestionarMaterial.ui", self)
-
+        self.setFixedSize(self.size())
         self.btnEliminar.clicked.connect(self.eliminar_material)
         self.btnModificar.clicked.connect(self.modificar_material)
         self.btnAnadir.clicked.connect(self.registrar_material)
