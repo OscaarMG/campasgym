@@ -30,7 +30,7 @@ class AdministradorWindow(QMainWindow, Form):
         self._controlador.abrir_gestionar_socio()
 
     def abrir_gestionar_monitor(self):
-        print("Abriendo ventana de gestionar entrenadore")
+        print("Abriendo ventana de gestionar entrenadores")
         self._controlador.abrir_gestionar_entrenador()
 
     def abrir_gestionar_inventario(self):
