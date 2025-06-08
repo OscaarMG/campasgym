@@ -13,16 +13,37 @@
   <property name="windowTitle">
    <string>Asignar Dietas</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color:#000000</string>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
-    <layout class="QHBoxLayout" name="horizontalTop">
-     <item>
-      <widget class="QTableWidget" name="tablaSolicitudes">
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
+    <widget class="QFrame" name="mainFrame">
+     <property name="styleSheet">
+      <string notr="true">background-color:#000000</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalTop">
+        <item>
+         <widget class="QTableWidget" name="tablaSolicitudes">
+          <property name="styleSheet">
+           <string notr="true">QTableWidget {
     background-color: #6d6d6d;
     color: white;
     gridline-color: #888888; 
@@ -62,14 +83,14 @@ QTableCornerButton::section {
 
 
 QScrollBar:vertical {
-    background: #5d5d5d;  
+    background: #5d5d5d; 	
     width: 12px;
     margin: 0px;
     border: none;
 }
 
 QScrollBar::handle:vertical {
-    background: #888888;  
+    background: #888888; 	
     min-height: 20px;
     border-radius: 4px;
 }
@@ -107,39 +128,39 @@ QTableWidget QLineEdit {
     border: 1px solid #777777;
     padding: 2px;
 }</string>
-       </property>
-       <property name="rowCount">
-        <number>0</number>
-       </property>
-       <property name="columnCount">
-        <number>4</number>
-       </property>
-       <column>
-        <property name="text">
-         <string>ID Solicitud</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>ID Socio</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Objetivo</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Fecha Solicitud</string>
-        </property>
-       </column>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTableWidget" name="tablaDietas">
-       <property name="styleSheet">
-        <string notr="true">QTableWidget {
+          </property>
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>4</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID Solicitud</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>ID Socio</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Objetivo</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Fecha Solicitud</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tablaDietas">
+          <property name="styleSheet">
+           <string notr="true">QTableWidget {
     background-color: #6d6d6d;
     color: white;
     gridline-color: #888888; 
@@ -179,14 +200,14 @@ QTableCornerButton::section {
 
 
 QScrollBar:vertical {
-    background: #5d5d5d;  
+    background: #5d5d5d; 	
     width: 12px;
     margin: 0px;
     border: none;
 }
 
 QScrollBar::handle:vertical {
-    background: #888888;  
+    background: #888888; 	
     min-height: 20px;
     border-radius: 4px;
 }
@@ -224,41 +245,41 @@ QTableWidget QLineEdit {
     border: 1px solid #777777;
     padding: 2px;
 }</string>
-       </property>
-       <property name="rowCount">
-        <number>0</number>
-       </property>
-       <property name="columnCount">
-        <number>3</number>
-       </property>
-       <column>
-        <property name="text">
-         <string>ID</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Nombre</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>Descripción</string>
-        </property>
-       </column>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QVBoxLayout" name="formLayout">
-     <item>
-      <widget class="QLabel" name="labelNombre">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
-    color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+          </property>
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>3</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nombre</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Descripción</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="formLayout">
+        <item>
+         <widget class="QLabel" name="labelNombre">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b; 	 
+    color: #ff4c4c; 	 	 	 	 	 
+    border: 2px solid #cc0000; 	 
     padding: 4px;
     font-size: 12px;
     font-weight: bold;
@@ -268,32 +289,32 @@ QTableWidget QLineEdit {
 QLabel {
     text-decoration: underline;
 }</string>
-       </property>
-       <property name="text">
-        <string>Nombre Dieta:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="inputNombre">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
+          </property>
+          <property name="text">
+           <string>Nombre Dieta:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="inputNombre">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
     background-color: #000000;
     border: 1.5px solid #f0f0f0;
     color: #f0f0f0;
     padding: 4px;
     border-radius: 4px;
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelDescripcion">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
-    color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelDescripcion">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b; 	 
+    color: #ff4c4c; 	 	 	 	 	 
+    border: 2px solid #cc0000; 	 
     padding: 4px;
     font-size: 12px;
     font-weight: bold;
@@ -303,37 +324,37 @@ QLabel {
 QLabel {
     text-decoration: underline;
 }</string>
-       </property>
-       <property name="text">
-        <string>Descripción:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTextEdit" name="inputDescripcion">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>120</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QTextEdit {
+          </property>
+          <property name="text">
+           <string>Descripción:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="inputDescripcion">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTextEdit {
     background-color: #000000;
     border: 1.5px solid #f0f0f0;
     color: #f0f0f0;
     padding: 2px;
     border-radius: 4px;
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout">
-       <item>
-        <widget class="QPushButton" name="btnCrear">
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout">
+          <item>
+           <widget class="QPushButton" name="btnCrear">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -345,16 +366,16 @@ QLabel {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-         </property>
-         <property name="text">
-          <string>Crear Dieta</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnAsignar">
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+            </property>
+            <property name="text">
+             <string>Crear Dieta</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnAsignar">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -366,16 +387,16 @@ QPushButton:hover {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-         </property>
-         <property name="text">
-          <string>Asignar a Usuario</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnEliminar">
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+            </property>
+            <property name="text">
+             <string>Asignar a Usuario</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnEliminar">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -387,16 +408,16 @@ QPushButton:hover {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-         </property>
-         <property name="text">
-          <string>Eliminar Dieta</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnCancelar">
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+            </property>
+            <property name="text">
+             <string>Eliminar Dieta</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCancelar">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -408,15 +429,18 @@ QPushButton:hover {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-         </property>
-         <property name="text">
-          <string>Cancelar</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+            </property>
+            <property name="text">
+             <string>Cancelar</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

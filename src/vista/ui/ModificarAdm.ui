@@ -13,370 +13,393 @@
   <property name="windowTitle">
    <string>Modificar / Registrar Administrativo</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color:#000000</string>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="labelNombre">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+    <widget class="QFrame" name="backgroundFrame">
+     <property name="styleSheet">
+      <string notr="true">QFrame#backgroundFrame {
+	background-color:#000000
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelNombre">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Nombre:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEditNombre">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Nombre:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="lineEditNombre">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="labelApellido1">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelApellido1">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Apellido 1:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEditApellido1">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Apellido 1:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="lineEditApellido1">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="labelApellido2">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelApellido2">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Apellido 2:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEditApellido2">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Apellido 2:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="lineEditApellido2">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="labelUsuario">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelUsuario">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Usuario:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEditUsuario">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Usuario:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="lineEditUsuario">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="labelContrasena">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="labelContrasena">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Contraseña:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEditContrasena">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Contraseña:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="lineEditContrasena">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="labelEspecialidad">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="labelEspecialidad">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Puesto:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="lineEditPuesto">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Puesto:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="lineEditPuesto">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="labelEmail">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="labelEmail">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Email:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="lineEditEmail">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Email:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLineEdit" name="lineEditEmail">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="labelTelefono">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="labelTelefono">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Teléfono:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QLineEdit" name="lineEditTelefono">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Teléfono:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLineEdit" name="lineEditTelefono">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="labelNCuenta">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="labelNCuenta">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Nº Cuenta:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="lineEditNCuenta">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Nº Cuenta:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLineEdit" name="lineEditNCuenta">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="0">
-      <widget class="QLabel" name="labelHorario">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="labelHorario">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Horario:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="9" column="1">
-      <widget class="QLineEdit" name="lineEditHorario">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+          </property>
+          <property name="text">
+           <string>Horario:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLineEdit" name="lineEditHorario">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #2b2b2b;        
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 3px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0">
-      <widget class="QLabel" name="labelFechaIngreso">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    background-color: #2b2b2b;     
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="labelFechaIngreso">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+    background-color: #2b2b2b;      
     color: #ff4c4c;              
-    border: 2px solid #cc0000;     
+    border: 2px solid #cc0000;      
     padding: 3px;
     font-size: 8px;
     font-weight: bold;
     border-radius: 6px;
 }</string>
-       </property>
-       <property name="text">
-        <string>Fecha Ingreso:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="1">
-      <widget class="QDateEdit" name="dateEdit">
-       <property name="styleSheet">
-        <string notr="true">QDateEdit {
-    background-color: #2b2b2b;     
-    color: white;                  
-    border: 1.5px solid #777777;    
+          </property>
+          <property name="text">
+           <string>Fecha Ingreso:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QDateEdit" name="dateEdit">
+          <property name="styleSheet">
+           <string notr="true">QDateEdit {
+    background-color: #2b2b2b;      
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 8px;
     border-radius: 4px;
     selection-background-color: #444444;
@@ -401,17 +424,17 @@ QCalendarWidget QAbstractItemView {
     selection-background-color: #444444;
     selection-color: #ff4c4c;
 }</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayoutButtons">
-     <item>
-      <widget class="QPushButton" name="btnGuardar">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutButtons">
+        <item>
+         <widget class="QPushButton" name="btnGuardar">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -423,16 +446,16 @@ QCalendarWidget QAbstractItemView {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-       </property>
-       <property name="text">
-        <string>Guardar</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnCancelar">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+          </property>
+          <property name="text">
+           <string>Guardar</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnCancelar">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -444,13 +467,16 @@ QPushButton:hover {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-       </property>
-       <property name="text">
-        <string>Cancelar</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+          </property>
+          <property name="text">
+           <string>Cancelar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

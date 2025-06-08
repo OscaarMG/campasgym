@@ -13,45 +13,68 @@
   <property name="windowTitle">
    <string>Gestión de Monitores</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color:#000000</string>
-  </property>
-  <widget class="QLineEdit" name="filterLineEdit">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>300</width>
-     <height>30</height>
-    </rect>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="leftMargin">
+    <number>0</number>
    </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit {
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="backgroundFrame">
+     <property name="styleSheet">
+      <string notr="true">QFrame#backgroundFrame {
+	background-color:#000000
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLineEdit" name="filterLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>300</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
     background-color: #2b2b2b;      
-    color: white;                   
-    border: 1.5px solid #777777;     
+    color: white;                    
+    border: 1.5px solid #777777;      
     padding: 2px;
     border-radius: 4px;
     selection-background-color: #444444;
     selection-color: #ff4c4c;        
 }
 </string>
-   </property>
-   <property name="placeholderText">
-    <string>Filtrar monitores...</string>
-   </property>
-  </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>660</width>
-     <height>350</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QTableView {
+      </property>
+      <property name="placeholderText">
+       <string>Filtrar monitores...</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>660</width>
+        <height>350</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTableView {
     background-color: #6d6d6d;
     color: white;
     gridline-color: #888888; 
@@ -136,19 +159,19 @@ QTableWidget QLineEdit {
     border: 1px solid #777777;
     padding: 2px;
 }</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnRegistrar">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>430</y>
-     <width>100</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnRegistrar">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>430</y>
+        <width>100</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -160,22 +183,22 @@ QTableWidget QLineEdit {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-   </property>
-   <property name="text">
-    <string>Registrar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnModificar">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>430</y>
-     <width>100</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
+      </property>
+      <property name="text">
+       <string>Registrar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnModificar">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>430</y>
+        <width>100</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -187,22 +210,22 @@ QPushButton:hover {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-   </property>
-   <property name="text">
-    <string>Modificar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnEliminar">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>430</y>
-     <width>100</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
+      </property>
+      <property name="text">
+       <string>Modificar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnEliminar">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>430</y>
+        <width>100</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -214,22 +237,22 @@ QPushButton:hover {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-   </property>
-   <property name="text">
-    <string>Eliminar</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btnCancelar">
-   <property name="geometry">
-    <rect>
-     <x>580</x>
-     <y>10</y>
-     <width>100</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
+      </property>
+      <property name="text">
+       <string>Eliminar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnCancelar">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>10</y>
+        <width>100</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
     background-color: #da0000;
     color: white;
     border-radius: 10px;
@@ -241,11 +264,14 @@ QPushButton:hover {
 QPushButton:hover {
     background-color: #aa0000;
 }</string>
-   </property>
-   <property name="text">
-    <string>Cancelar</string>
-   </property>
-  </widget>
+      </property>
+      <property name="text">
+       <string>Cancelar</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
