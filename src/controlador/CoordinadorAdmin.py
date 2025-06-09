@@ -244,8 +244,8 @@ class CoordinadorAdmin:
         self._ventana.cargar_datos(None)
         self._ventana.show()
 
-    def registrar_adm(self, adm_vo: AdmVO):
-        return self._modelo.registrar_adm(adm_vo)
-    
-    def modificar_adm(self, adm_vo: AdmVO):
-        return self._modelo.modificar_adm(adm_vo)
+    def registrar_adm(self, datos_dict):
+        return self._modelo.registrar_adm(datos_dict)
+
+    def modificar_adm(self, datos_dict):
+        return self._modelo.modificar_adm(datos_dict)
