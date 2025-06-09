@@ -37,16 +37,12 @@ class SolicitarRutina(QWidget):
 
     def solicitar_rutina(self):
         objetivo = self.inputObjetivo.toPlainText().strip()
-        if not objetivo:
-            QMessageBox.warning(self, "Error", "Debes introducir un objetivo.")
-            return
-        solicitarVO = SolicitarVO(
-            id_socio=self.id_socio,
-            objetivo=objetivo
-        )
-        self.controlador.solicitar_rutina(solicitarVO)
-        QMessageBox.information(self, "Solicitud enviada", "Tu solicitud de rutina ha sido registrada.")
-        self.inputObjetivo.clear()
+        exito, mensaje = self.controlador.solicitar_rutina(self.id_socio, objetivo)
+        if exito:
+            QMessageBox.information(self, "Solicitud enviada", mensaje)
+            self.inputObjetivo.clear()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
 
     def eliminar_rutina(self):
         fila = self.tablaRutinas.currentRow()
@@ -55,13 +51,13 @@ class SolicitarRutina(QWidget):
             return
 
         id_rutina = int(self.tablaRutinas.item(fila, 0).text())
-        eliminarVO = EliminarVO(
-            id_socio=self.id_socio,
-            id_elemento=id_rutina
-        )
-        self.controlador.eliminar_rutina(eliminarVO)
-        QMessageBox.information(self, "Éxito", "Rutina eliminada.")
-        self.cargar_rutinas()
+        exito, mensaje = self.controlador.eliminar_rutina(self.id_socio, id_rutina)
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
+            self.cargar_rutinas()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
+
 
     def volver_panel_principal(self):
         self.controlador.volver_panel_principal()

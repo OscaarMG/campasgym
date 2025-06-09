@@ -37,8 +37,8 @@ class CoordinadorAdmin:
 
 
     def registrar_usuario(self, nombre, apellidos, dni, usuario, contrasena, email, tipo):
-        user_vo = UserVO(nombre, apellidos, dni, usuario, contrasena, email, tipo)
-        return self._modelo.registrar_usuario(user_vo)
+        return self._modelo.registrar_usuario(nombre, apellidos, dni, usuario, contrasena, email, tipo)
+
 
     def abrir_gestionar_socio(self):
         self._ventana.close()
@@ -66,8 +66,9 @@ class CoordinadorAdmin:
     def eliminar_socio(self, id_socio):
         return self._modelo.eliminar_socio(id_socio)
     
-    def modificar_socio(self, user_vo):
-        return self._modelo.modificar_socio(user_vo)
+    def modificar_socio(self, datos_usuario_dict):
+        return self._modelo.modificar_socio(datos_usuario_dict)
+
     
     def obtener_socio_por_id(self, id_socio):
         socios = self.obtener_socios()
@@ -136,11 +137,11 @@ class CoordinadorAdmin:
         self._ventana.cargar_datos(None)
         self._ventana.show()
 
-    def registrar_entrenador(self, entrenador_vo: EntrenadorVO):
-        return self._modelo.registrar_entrenador(entrenador_vo)
-    
-    def modificar_entrenador(self, entrenador_vo):
-        return self._modelo.modificar_entrenador(entrenador_vo)
+    def registrar_entrenador(self, datos_dict):
+        return self._modelo.registrar_entrenador(datos_dict)
+
+    def modificar_entrenador(self, datos_dict):
+        return self._modelo.modificar_entrenador(datos_dict)
     
     def abrir_gestionar_material(self):
         self._ventana.close()
@@ -182,11 +183,12 @@ class CoordinadorAdmin:
         self._ventana.cargar_datos(None)
         self._ventana.show()
 
-    def registrar_material(self, materialVO):
-        return self._modelo.registrar_material(materialVO)
+    def registrar_material(self, datos_material):
+        return self._modelo.registrar_material(datos_material)
 
-    def modificar_material(self, materialVO):
-        return self._modelo.modificar_material(materialVO)
+    def modificar_material(self, datos_material):
+        return self._modelo.modificar_material(datos_material)
+
     
     def abrir_gestionar_adm(self):
         self._ventana.close()

@@ -22,16 +22,16 @@ class RegistrarUsu(QMainWindow, Form):
         contrasena = self.lineContrasena.text()
         tipo = self.comboBoxTipoUsu.currentText()
 
-        if not nombre or not apellidos or not email or not dni or not usuario or not contrasena:
-            QMessageBox.warning(self, "Error", "Todos los campos son obligatorios.")
-        else:
-            if self.controlador.registrar_usuario(nombre, apellidos, dni, usuario, contrasena, email, tipo):
-                QMessageBox.information(self, "Éxito", "Usuario registrado correctamente.")
-            else:
-                QMessageBox.warning(self, "Error", "No se pudo registrar el usuario.")
+        exito, mensaje = self.controlador.registrar_usuario(
+            nombre, apellidos, dni, usuario, contrasena, email, tipo
+        )
 
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
             self.controlador.volver_panel_principal()
             self.close()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
 
     def volver_panel_principal(self):
         if hasattr(self, "controlador"):

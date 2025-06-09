@@ -43,16 +43,13 @@ class CrearRutina(QWidget):
         return item
 
     def crear_rutina(self):
-        rutinaVO = RutinaVO(
-        nombre = self.inputNombre.text(),
+        nombre = self.inputNombre.text()
         descripcion = self.inputDescripcion.toPlainText()
-        )
-        if not rutinaVO._nombre or not rutinaVO._descripcion:
-            QMessageBox.warning(self, "Error", "Completa todos los campos.")
+        exito, mensaje = self.controlador.crear_rutina(nombre, descripcion)
+        if not exito:
+            QMessageBox.warning(self, "Error", mensaje)
             return
-
-        self.controlador.crear_rutina(rutinaVO)
-        QMessageBox.information(self, "Éxito", "Rutina creada.")
+        QMessageBox.information(self, "Éxito", mensaje)
         self.cargar_tablas()
         self.inputNombre.clear()
         self.inputDescripcion.clear()
@@ -60,17 +57,15 @@ class CrearRutina(QWidget):
     def asignar_rutina(self):
         fila_solicitud = self.tablaSolicitudes.currentRow()
         fila_rutina = self.tablaRutinas.currentRow()
-
         if fila_solicitud == -1 or fila_rutina == -1:
             QMessageBox.warning(self, "Error", "Selecciona una solicitud y una rutina.")
             return
-        asignarVO = AsignarVO(
-            id_solicitud = int(self.tablaSolicitudes.item(fila_solicitud, 0).text()),
-            id_socio = int(self.tablaSolicitudes.item(fila_solicitud, 1).text()),
-            id_asignar = int(self.tablaRutinas.item(fila_rutina, 0).text())
-        )
-        self.controlador.asignar_rutina(asignarVO)
-        QMessageBox.information(self, "Éxito", "Rutina asignada correctamente.")
+        id_solicitud = int(self.tablaSolicitudes.item(fila_solicitud, 0).text())
+        id_socio = int(self.tablaSolicitudes.item(fila_solicitud, 1).text())
+        id_rutina = int(self.tablaRutinas.item(fila_rutina, 0).text())
+
+        _, mensaje = self.controlador.asignar_rutina(id_solicitud, id_socio, id_rutina)
+        QMessageBox.information(self, "Éxito", mensaje)
         self.cargar_tablas()
 
     def eliminar_rutina(self):
@@ -78,11 +73,11 @@ class CrearRutina(QWidget):
         if fila_rutina == -1:
             QMessageBox.warning(self, "Error", "Selecciona una rutina para eliminar.")
             return
-
         id_rutina = int(self.tablaRutinas.item(fila_rutina, 0).text())
-        self.controlador.eliminar_rutina(id_rutina)
-        QMessageBox.information(self, "Éxito", "Rutina eliminada correctamente.")
+        _, mensaje = self.controlador.eliminar_rutina(id_rutina)
+        QMessageBox.information(self, "Éxito", mensaje)
         self.cargar_tablas()
+
 
     def volver_panel_principal(self):
         self.controlador.volver_panel_principal()

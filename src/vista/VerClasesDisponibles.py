@@ -43,15 +43,13 @@ class VerClasesDisponibles(QWidget):
             return
 
         id_clase = int(self.tablaClases.item(fila, 0).text())
-        inscribirseVO = InscribirseVO(
-            id_socio=self.id_socio,
-            id_clase=id_clase
-        )
-        if self.controlador.inscribirse_a_clase(inscribirseVO):
-            QMessageBox.information(self, "Éxito", "Inscripción realizada")
+
+        resultado, mensaje = self.controlador.apuntarse_a_clase(self.id_socio, id_clase)
+        if resultado:
+            QMessageBox.information(self, "Éxito", mensaje)
             self.cargar_tabla()
         else:
-            QMessageBox.warning(self, "Error", "Ya estás inscrito o ocurrió un error")
+            QMessageBox.warning(self, "Error", mensaje)
 
     def _item(self, texto):
         item = QTableWidgetItem(texto)

@@ -1,6 +1,5 @@
 from PyQt6.QtWidgets import QWidget, QMessageBox, QListWidgetItem
 from PyQt6 import uic
-from src.modelo.vo.ClaseVO import ClaseVO
 
 class CrearClase(QWidget):
     def __init__(self, id_entrenador):
@@ -28,30 +27,16 @@ class CrearClase(QWidget):
         lugar = self.comboBoxSala.currentText().strip()
         cupo = self.spinBoxCupoMaximo.value()
 
-        # Validación
-        if not nombre or not horario or not lugar:
-            QMessageBox.warning(self, "Error", "Todos los campos obligatorios deben estar llenos")
-            return
-
-        if self.id_entrenador is None:
-            QMessageBox.warning(self, "Error", "Entrenador no válido")
-            return
-        clase = ClaseVO(
-            nombre=nombre,
-            descripcion=descripcion,
-            horario=horario,
-            lugar=lugar,
-            cupo_maximo=cupo,
-            id_entrenador=self.id_entrenador
+        exito, mensaje = self.controlador.registrar_clase(
+            nombre, descripcion, horario, lugar, cupo, self.id_entrenador
         )
 
-
-        if self.controlador.registrar_clase(clase):
-            QMessageBox.information(self, "Éxito", "Clase registrada correctamente")
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
             self.controlador.volver_panel_principal()
             self.close()
         else:
-            QMessageBox.warning(self, "Error", "Error al registrar la clase")
+            QMessageBox.warning(self, "Error", mensaje)
 
     def cargar_clases(self):
         self.listWidgetClases.clear()
@@ -67,14 +52,15 @@ class CrearClase(QWidget):
             QMessageBox.warning(self, "Error", "Selecciona una clase para cancelar.")
             return
         id_clase = item.data(256)
-        if self.controlador.eliminar_clase(id_clase):
-            QMessageBox.information(self, "Éxito", "Clase cancelada correctamente.")
+        exito, mensaje = self.controlador.eliminar_clase(id_clase)
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
             self.cargar_clases()
         else:
-            QMessageBox.warning(self, "Error", "Error al cancelar la clase.")
-
+            QMessageBox.warning(self, "Error", mensaje)
 
     def cancelar(self):
         self.controlador.volver_panel_principal()
         self.close()
+
 

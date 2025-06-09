@@ -17,19 +17,23 @@ class RecuContra2(QMainWindow, Form):
         self.BotonCancelar.clicked.connect(self.cerrar_ventana)
 
     def mostrar_mensaje(self):
-            QMessageBox.information(self, "Reestablecer contraseña", f"Hemos mandado un código de verificación al correo {self.correo}.\n")
-            print(f"El código es: {self.codigo}")
-
+        QMessageBox.information(self, "Reestablecer contraseña",
+                                f"Hemos mandado un código de verificación al correo {self.correo}.")
+        print(f"El código es: {self.codigo}")
 
     def validar_codigo(self):
-        codigo_introducido = self.CodigoEdit.text()
+        codigo_ingresado = self.CodigoEdit.text()
         nueva_contra = self.NuevaContrasenaEdit.text()
-        if codigo_introducido == self.codigo:
-            self.controlador.actualizarContrasena(self.usuario, nueva_contra)
-            QMessageBox.information(self, "Éxito", "Contraseña actualizada correctamente.")
-            self.controlador.ventana_login.resetear()
-            self.controlador.ventana_login.show()
-            self.close()
+
+        if codigo_ingresado == self.codigo:
+            exito, mensaje = self.controlador.actualizarContrasena(self.usuario, nueva_contra)
+            if exito:
+                QMessageBox.information(self, "Éxito", mensaje)
+                self.controlador.ventana_login.resetear()
+                self.controlador.ventana_login.show()
+                self.close()
+            else:
+                QMessageBox.warning(self, "Error", mensaje)
         else:
             QMessageBox.warning(self, "Error", "El código introducido es incorrecto.")
             self.CodigoEdit.clear()

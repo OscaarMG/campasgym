@@ -37,16 +37,12 @@ class SolicitarDieta(QWidget):
 
     def solicitar_dieta(self):
         objetivo = self.inputObjetivo.toPlainText().strip()
-        if not objetivo:
-            QMessageBox.warning(self, "Error", "Debes introducir un objetivo.")
-            return
-        solicitarVO = SolicitarVO(
-            id_socio=self.id_socio,
-            objetivo=objetivo
-        )
-        self.controlador.solicitar_dieta(solicitarVO)
-        QMessageBox.information(self, "Solicitud enviada", "Tu solicitud de dieta ha sido registrada.")
-        self.inputObjetivo.clear()
+        exito, mensaje = self.controlador.solicitar_dieta(self.id_socio, objetivo)
+        if exito:
+            QMessageBox.information(self, "Solicitud enviada", mensaje)
+            self.inputObjetivo.clear()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
 
     def eliminar_dieta(self):
         fila = self.tablaDietas.currentRow()
@@ -55,13 +51,13 @@ class SolicitarDieta(QWidget):
             return
 
         id_dieta = int(self.tablaDietas.item(fila, 0).text())
-        eliminarVO = EliminarVO(
-            id_socio=self.id_socio,
-            id_elemento=id_dieta
-        )
-        self.controlador.eliminar_dieta(eliminarVO)
-        QMessageBox.information(self, "Éxito", "Dieta eliminada.")
-        self.cargar_dietas()
+        exito, mensaje = self.controlador.eliminar_dieta(self.id_socio, id_dieta)
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
+            self.cargar_dietas()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
+
 
     def volver_panel_principal(self):
         self.controlador.volver_panel_principal()

@@ -52,38 +52,31 @@ class ModificarAdm(QWidget):
             self.labelFechaIngreso.setText("Fecha actual al guardar")
     
     def guardar(self):
-        # Validar mínimo básico
-        if not self.lineEditNombre.text() or not self.lineEditUsuario.text() or not self.lineEditApellido1.text():
-            QMessageBox.warning(self, "Error", "Nombre, apellido y usuario son obligatorios")
-            return
-
-        admVO = AdmVO(
-            id_adm=self._adm._id_adm if self._adm else None,
-            nombre=self.lineEditNombre.text(),
-            apellido1=self.lineEditApellido1.text(),
-            apellido2=self.lineEditApellido2.text(),
-            usuario=self.lineEditUsuario.text(),
-            contrasena=self.lineEditContrasena.text(),
-            puesto=self.lineEditPuesto.text(),
-            email=self.lineEditEmail.text(),
-            telefono=self.lineEditTelefono.text(),
-            n_cuenta=self.lineEditNCuenta.text(),
-            horario=self.lineEditHorario.text(),
-            fecha_ingreso=self._adm._fecha_ingreso if self._adm else None
-        )
+        adm_datos = {
+            "id_adm": self._adm._id_adm if self._adm else None,
+            "nombre": self.lineEditNombre.text(),
+            "apellido1": self.lineEditApellido1.text(),
+            "apellido2": self.lineEditApellido2.text(),
+            "usuario": self.lineEditUsuario.text(),
+            "contrasena": self.lineEditContrasena.text(),
+            "puesto": self.lineEditPuesto.text(),
+            "email": self.lineEditEmail.text(),
+            "telefono": self.lineEditTelefono.text(),
+            "n_cuenta": self.lineEditNCuenta.text(),
+            "horario": self.lineEditHorario.text(),
+            "fecha_ingreso": self._adm._fecha_ingreso if self._adm else None
+        }
 
         if self._modo_registro:
-            # Registrar nuevo Administrativo (fecha_ingreso = ahora en DAO)
-            exito = self.controlador.registrar_adm(admVO)
+            exito, mensaje = self.controlador.registrar_adm(adm_datos)
         else:
-            exito = self.controlador.modificar_adm(admVO)
+            exito, mensaje = self.controlador.modificar_adm(adm_datos)
 
         if exito:
-            QMessageBox.information(self, "Éxito", "Datos guardados correctamente")
+            QMessageBox.information(self, "Éxito", mensaje)
             self.controlador.abrir_gestionar_adm()
         else:
-            QMessageBox.warning(self, "Error", "No se pudo guardar")
-
+            QMessageBox.warning(self, "Error", mensaje)
     def volver_panel_principal(self):
         if hasattr(self, "controlador"):
             self.controlador.volver_panel_principal()

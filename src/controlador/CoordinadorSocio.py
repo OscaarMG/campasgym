@@ -28,20 +28,20 @@ class CoordinadorSocio:
     def obtener_clases_disponibles(self):
         return self._modelo.obtener_clases_disponibles()
     
-    def inscribirse_a_clase(self, inscribirseVO):
-        return self._modelo.inscribirse_a_clase(inscribirseVO)
+    def apuntarse_a_clase(self, id_socio, id_clase):
+        return self._modelo.inscribirse_a_clase(id_socio, id_clase)
     
     def cargar_rutinas(self, id_socio):
         return self._modelo.obtener_rutinas_asignadas(id_socio)
 
-    def eliminar_rutina(self, eliminarVO):
-        self._modelo.eliminar_rutina_asignada(eliminarVO)
+    def eliminar_rutina(self, id_socio, id_rutina):
+        return self._modelo.eliminar_rutina_asignada(id_socio, id_rutina)
 
-    def renovar_suscripcion(self, id_socio, tipo):
-        self._modelo.renovar_suscripcion(id_socio, tipo)
+    def renovar_suscripcion(self, id_socio, tipo, cuenta, cvc, fecha_cad):
+        return self._modelo.renovar_suscripcion(id_socio, tipo, cuenta, cvc, fecha_cad)
 
-    def solicitar_rutina(self, solicitarVO):
-        self._modelo.solicitar_rutina(solicitarVO)
+    def solicitar_rutina(self, id_socio, objetivo):
+        return self._modelo.solicitar_rutina(id_socio, objetivo)
     
     def abrir_rutina(self, id_socio):
         self._ventana.close()
@@ -52,11 +52,11 @@ class CoordinadorSocio:
     def cargar_dietas(self, id_socio):
         return self._modelo.obtener_dietas_asignadas(id_socio)
 
-    def eliminar_dieta(self, eliminarVO):
-        self._modelo.eliminar_dieta_asignada(eliminarVO)
+    def eliminar_dieta(self, id_socio, id_dieta):
+        return self._modelo.eliminar_dieta_asignada(id_socio, id_dieta)
 
-    def solicitar_dieta(self, solicitarVO):
-        self._modelo.solicitar_dieta(solicitarVO)
+    def solicitar_dieta(self, id_socio, objetivo):
+        return self._modelo.solicitar_dieta(id_socio, objetivo)
     
     def abrir_dieta(self, id_socio):
         self._ventana.close()
@@ -65,7 +65,7 @@ class CoordinadorSocio:
         self._ventana.show()
 
     def dar_de_baja_socio(self, id_socio):
-        self._modelo.eliminar_socio(id_socio)
+        return self._modelo.eliminar_socio(id_socio)
 
     def abrir_renovar_suscripcion(self, id_socio):
         self._ventana.close()

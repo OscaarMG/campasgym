@@ -52,37 +52,31 @@ class ModificarEntrenador(QWidget):
             self.labelFechaIngreso.setText("Fecha actual al guardar")
     
     def guardar(self):
-        # Validar mínimo básico
-        if not self.lineEditNombre.text() or not self.lineEditUsuario.text() or not self.lineEditApellido1.text():
-            QMessageBox.warning(self, "Error", "Nombre, apellido y usuario son obligatorios")
-            return
-
-        entrenadorVO = EntrenadorVO(
-            id_entrenador=self._entrenador._id_entrenador if self._entrenador else None,
-            nombre=self.lineEditNombre.text(),
-            apellido1=self.lineEditApellido1.text(),
-            apellido2=self.lineEditApellido2.text(),
-            usuario=self.lineEditUsuario.text(),
-            contrasena=self.lineEditContrasena.text(),
-            especialidad=self.lineEditEspecialidad.text(),
-            email=self.lineEditEmail.text(),
-            telefono=self.lineEditTelefono.text(),
-            n_cuenta=self.lineEditNCuenta.text(),
-            horario=self.lineEditHorario.text(),
-            fecha_ingreso=self._entrenador._fecha_ingreso if self._entrenador else None
-        )
+        entrenador_datos = {
+            "id_entrenador": self._entrenador._id_entrenador if self._entrenador else None,
+            "nombre": self.lineEditNombre.text(),
+            "apellido1": self.lineEditApellido1.text(),
+            "apellido2": self.lineEditApellido2.text(),
+            "usuario": self.lineEditUsuario.text(),
+            "contrasena": self.lineEditContrasena.text(),
+            "especialidad": self.lineEditEspecialidad.text(),
+            "email": self.lineEditEmail.text(),
+            "telefono": self.lineEditTelefono.text(),
+            "n_cuenta": self.lineEditNCuenta.text(),
+            "horario": self.lineEditHorario.text(),
+            "fecha_ingreso": self._entrenador._fecha_ingreso if self._entrenador else None
+        }
 
         if self._modo_registro:
-            # Registrar nuevo Entrenador (fecha_ingreso = ahora en DAO)
-            exito = self.controlador.registrar_entrenador(entrenadorVO)
+            exito, mensaje = self.controlador.registrar_entrenador(entrenador_datos)
         else:
-            exito = self.controlador.modificar_entrenador(entrenadorVO)
+            exito, mensaje = self.controlador.modificar_entrenador(entrenador_datos)
 
         if exito:
-            QMessageBox.information(self, "Éxito", "Datos guardados correctamente")
+            QMessageBox.information(self, "Éxito", mensaje)
             self.controlador.abrir_gestionar_entrenador()
         else:
-            QMessageBox.warning(self, "Error", "No se pudo guardar")
+            QMessageBox.warning(self, "Error", mensaje)
 
     def volver_panel_principal(self):
         if hasattr(self, "controlador"):

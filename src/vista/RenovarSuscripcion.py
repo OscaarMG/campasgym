@@ -32,7 +32,7 @@ class RenovarSuscripcion(QMainWindow, Form):
             return
 
         try:
-            self.controlador.renovar_suscripcion(self.id_socio, tipo)
+            self.controlador.renovar_suscripcion(self.id_socio, tipo, cuenta, cvc, fecha_cad)
             QMessageBox.information(self, "Éxito", "Suscripción renovada correctamente.")
             self.volver_panel_principal()
         except Exception as e:

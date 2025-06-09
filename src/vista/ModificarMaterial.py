@@ -38,30 +38,28 @@ class ModificarMaterial(QWidget):
             self.labelFechaIngreso.setText("Fecha al guardar")
 
     def guardar(self):
-        if not self.lineEditNombre.text():
-            QMessageBox.warning(self, "Error", "Nombre es obligatorio")
-            return
+        # Recolectar datos del formulario
+        datos_material = {
+            "id_material": self._material._id_material if self._material else None,
+            "nombre": self.lineEditNombre.text(),
+            "cantidad": self.spinBoxCantidad.value(),
+            "estado": self.comboBoxEstado.currentText(),
+            "ubicacion": self.lineEditUbicacion.text(),
+            "fecha_ingreso": self._material._fecha_ingreso if self._material else None
+        }
 
-        materialVO = MaterialVO(
-            id_material=self._material._id_material if self._material else None,
-            nombre=self.lineEditNombre.text(),
-            cantidad=self.spinBoxCantidad.value(),
-            estado=self.comboBoxEstado.currentText(),
-            ubicacion=self.lineEditUbicacion.text(),
-            fecha_ingreso=self._material._fecha_ingreso if self._material else None
-        )
-
+        # Llamar al controlador
         if self._modo_registro:
-            exito = self.controlador.registrar_material(materialVO)
+            exito, mensaje = self.controlador.registrar_material(datos_material)
         else:
-            exito = self.controlador.modificar_material(materialVO)
+            exito, mensaje = self.controlador.modificar_material(datos_material)
 
         if exito:
-            QMessageBox.information(self, "Éxito", "Datos guardados correctamente")
+            QMessageBox.information(self, "Éxito", mensaje)
             self.controlador.abrir_gestionar_material()
         else:
-            QMessageBox.warning(self, "Error", "No se pudo guardar")
-
+            QMessageBox.warning(self, "Error", mensaje)
+            
     def volver_panel_principal(self):
         if hasattr(self, "controlador"):
             self.controlador.volver_panel_principal()

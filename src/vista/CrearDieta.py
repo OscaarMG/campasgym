@@ -1,8 +1,6 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QWidget, QMessageBox
 from PyQt6.QtCore import Qt
-from src.modelo.vo.DietaVO import DietaVO
-from src.modelo.vo.AsignarVO import AsignarVO
 
 class CrearDieta(QWidget):
     def __init__(self):
@@ -43,19 +41,17 @@ class CrearDieta(QWidget):
         return item
 
     def crear_dieta(self):
-        dietaVO = DietaVO(
-        nombre = self.inputNombre.text(),
+        nombre = self.inputNombre.text()
         descripcion = self.inputDescripcion.toPlainText()
-        )
-        if not dietaVO._nombre or not dietaVO._descripcion:
-            QMessageBox.warning(self, "Error", "Completa todos los campos.")
-            return
 
-        self.controlador.crear_dieta(dietaVO)
-        QMessageBox.information(self, "Éxito", "Dieta creada.")
-        self.cargar_tablas()
-        self.inputNombre.clear()
-        self.inputDescripcion.clear()
+        exito, mensaje = self.controlador.crear_dieta(nombre, descripcion)
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
+            self.inputNombre.clear()
+            self.inputDescripcion.clear()
+            self.cargar_tablas()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
 
     def asignar_dieta(self):
         fila_solicitud = self.tablaSolicitudes.currentRow()
@@ -64,14 +60,17 @@ class CrearDieta(QWidget):
         if fila_solicitud == -1 or fila_dieta == -1:
             QMessageBox.warning(self, "Error", "Selecciona una solicitud y una dieta.")
             return
-        asignarVO = AsignarVO(
-            id_solicitud = int(self.tablaSolicitudes.item(fila_solicitud, 0).text()),
-            id_socio = int(self.tablaSolicitudes.item(fila_solicitud, 1).text()),
-            id_asignar = int(self.tablaDietas.item(fila_dieta, 0).text())
-        )
-        self.controlador.asignar_dieta(asignarVO)
-        QMessageBox.information(self, "Éxito", "Dieta asignada correctamente.")
-        self.cargar_tablas()
+
+        id_solicitud = int(self.tablaSolicitudes.item(fila_solicitud, 0).text())
+        id_socio = int(self.tablaSolicitudes.item(fila_solicitud, 1).text())
+        id_dieta = int(self.tablaDietas.item(fila_dieta, 0).text())
+
+        exito, mensaje = self.controlador.asignar_dieta(id_solicitud, id_socio, id_dieta)
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
+            self.cargar_tablas()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
 
     def eliminar_dieta(self):
         fila_dieta = self.tablaDietas.currentRow()
@@ -80,9 +79,12 @@ class CrearDieta(QWidget):
             return
 
         id_dieta = int(self.tablaDietas.item(fila_dieta, 0).text())
-        self.controlador.eliminar_dieta(id_dieta)
-        QMessageBox.information(self, "Éxito", "Dieta eliminada correctamente.")
-        self.cargar_tablas()
+        exito, mensaje = self.controlador.eliminar_dieta(id_dieta)
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
+            self.cargar_tablas()
+        else:
+            QMessageBox.warning(self, "Error", mensaje)
 
     def volver_panel_principal(self):
         self.controlador.volver_panel_principal()

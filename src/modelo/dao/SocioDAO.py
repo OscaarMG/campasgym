@@ -67,6 +67,7 @@ class SocioDAO(Conexion):
                 INSERT INTO solicitudes_rutina (id_socio, objetivo)
                 VALUES (?, ?)
             """, (solicitarVO._id_socio, solicitarVO._objetivo))
+            return True
         except Exception as e:
             print("Error al insertar solicitar_rutina:", e)
             return False
@@ -104,6 +105,7 @@ class SocioDAO(Conexion):
                 INSERT INTO solicitudes_dieta (id_socio, objetivo)
                 VALUES (?, ?)
             """, (solicitarVO._id_socio, solicitarVO._objetivo))
+            return True
         except Exception as e:
             print("Error al insertar solicitar_dieta:", e)
             return False

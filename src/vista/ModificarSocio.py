@@ -20,23 +20,24 @@ class ModificarSocio(QWidget):
         self.btnCancelar.clicked.connect(self.volver_panel_principal)
 
     def guardar_cambios(self):
-        user_vo = UserVO(
-            self.txtNombre.text(),
-            self.txtApellidos.text(),
-            self.txtDNI.text(),
-            self.txtUsuario.text(),
-            "",  # Contraseña no se modifica aquí
-            self.txtEmail.text(),
-            self.txtTipo.text()
-        )
-        user_vo._id = self.id_socio
+        datos_usuario = {
+            "id": self.id_socio,
+            "nombre": self.txtNombre.text(),
+            "apellidos": self.txtApellidos.text(),
+            "dni": self.txtDNI.text(),
+            "usuario": self.txtUsuario.text(),
+            "email": self.txtEmail.text(),
+            "tipo": self.txtTipo.text()
+        }
 
-        if self.controlador.modificar_socio(user_vo):
-            QMessageBox.information(self, "Éxito", "Socio modificado correctamente.")
+        exito, mensaje = self.controlador.modificar_socio(datos_usuario)
+        
+        if exito:
+            QMessageBox.information(self, "Éxito", mensaje)
             self.close()
             self.controlador.volver_panel_principal()
         else:
-            QMessageBox.warning(self, "Error", "No se pudo modificar el socio.")
+            QMessageBox.warning(self, "Error", mensaje)
 
     def volver_panel_principal(self):
         if hasattr(self, "controlador"):

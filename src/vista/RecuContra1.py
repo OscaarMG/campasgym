@@ -12,11 +12,11 @@ class RecuContra1(QMainWindow, Form):
 
     def abrir_recucontra2(self):
         usuario = self.UsuarioEdit.text()
-        correo = self.controlador.verificarCorreo(usuario)
+        correo, mensaje = self.controlador.verificarCorreo(usuario)
         if correo:
             self.controlador.abrir_recucontra2(correo, usuario)
         else:
-            QMessageBox.warning(self, "Error", "El correo no está registrado.")
+            QMessageBox.warning(self, "Error", mensaje)
             self.controlador.ventana_login.show()
             self.close()
 

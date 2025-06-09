@@ -25,10 +25,10 @@ class CoordinadorPrincipal():
         return self._ventanaLogin
         
     def iniciarlogin(self, usuario, contrasena):
-        loginVO = LoginVO(usuario, contrasena)
-        usuario = self._modelo.comprobarLogin(loginVO)
+
+        usuario, mensaje = self._modelo.comprobarLogin(usuario, contrasena)
         if not usuario:
-            print("Credenciales incorrectas")
+            print(mensaje)
             return
 
         self._ventanaLogin.close()
@@ -74,8 +74,7 @@ class CoordinadorPrincipal():
             self._ventanaActual = None
     
     def actualizarContrasena(self, usuario, contrasena):
-        loginVO = LoginVO(usuario, contrasena)
-        return self._modelo.actualizarContrasena(loginVO)
+        return self._modelo.actualizarContrasena(usuario, contrasena)
 
     def verificarCorreo(self, usuario):
         return self._modelo.verificarCorreo(usuario)
